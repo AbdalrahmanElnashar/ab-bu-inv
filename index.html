@@ -1,0 +1,495 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Abdulrahman &amp; Buthaina — Engagement</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Great+Vibes&family=Playfair+Display:ital,wght@0,500;0,600;1,500&family=Cormorant+Garamond:ital,wght@1,600&family=Cormorant+Garamond:wght@400;600;700&family=EB+Garamond:wght@400;500&family=Viaoda+Libre&display=swap" rel="stylesheet">
+<style>
+:root{
+  --gold:#b97d3e; --gold-l:#d9a86a; --olive:#8d8f58; --cream:#fbf6ee; --ink:#7a5a35;
+  --serif:'Cormorant Garamond',serif; --body:'EB Garamond',serif; --display:'Viaoda Libre',serif; --script:'Alex Brush',cursive;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--body);color:var(--gold);background:linear-gradient(135deg,#c48a4c,#b97d3e 50%,#c9935a);min-height:100vh;-webkit-font-smoothing:antialiased}
+body.locked{overflow:hidden}
+
+/* ---------- Cover ---------- */
+#cover{position:fixed;inset:0;z-index:50;display:flex;align-items:center;justify-content:center;padding:20px;
+  background:radial-gradient(circle at 30% 20%,#d4a066,#b97d3e 60%,#a56d32);transition:opacity .9s ease,visibility .9s}
+#cover.gone{opacity:0;visibility:hidden}
+#cover::before{content:"";position:absolute;inset:0;opacity:.22;filter:brightness(2.2);
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cg fill='none' stroke='%23fff' stroke-width='1.2'%3E%3Cpath d='M60 8C72 28 72 44 60 60 48 44 48 28 60 8zM60 60C72 76 72 92 60 112 48 92 48 76 60 60zM8 60C28 48 44 48 60 60 44 72 28 72 8 60zM60 60C76 48 92 48 112 60 92 72 76 72 60 60zM60 34C40 34 30 20 38 10M60 34C80 34 90 20 82 10M60 86C40 86 30 100 38 110M60 86C80 86 90 100 82 110'/%3E%3Ccircle cx='60' cy='60' r='5'/%3E%3C/g%3E%3C/svg%3E") 0 0/120px 120px}
+.cover-card{position:relative;width:min(340px,92vw);background:var(--cream);border-radius:6px;padding:46px 24px 34px;text-align:center;
+  box-shadow:none;overflow:hidden}
+.cover-card .badge{width:44px;height:44px;border-radius:50%;background:var(--gold);color:#fff;display:grid;place-items:center;margin:-20px auto 14px;font-size:20px}
+.cover-card h1{font-family:var(--display);font-weight:400;font-size:27px;line-height:1.25;color:var(--gold)}
+.cover-card .amp{font-family:var(--script);font-size:20px;display:block;margin:2px 0}
+.cover-card .sub{font-family:var(--serif);letter-spacing:.12em;font-size:13px;margin-top:14px;color:var(--olive)}
+.cover-card .date{font-family:var(--serif);font-size:15px;margin-top:10px;color:var(--olive)}
+.btn{display:inline-block;border:0;cursor:pointer;background:var(--gold);color:#fff;font-family:var(--serif);font-weight:600;letter-spacing:.06em;
+  padding:9px 30px;border-radius:30px;font-size:14px;margin-top:18px;transition:transform .2s,background .2s}
+.btn:hover{transform:translateY(-1px);background:#a86b2f}
+.corner{position:absolute;width:27%;height:auto;pointer-events:none;mix-blend-mode:multiply}
+.corner.tl{top:0;left:0}
+.corner.br{bottom:0;right:0;width:26%}
+
+/* ---------- Page ---------- */
+main{max-width:520px;margin:0 auto;position:relative;overflow:hidden;background-color:var(--cream);
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cg fill='none' stroke='%23b97d3e' stroke-width='1.2' opacity='.11'%3E%3Cpath d='M60 8C72 28 72 44 60 60 48 44 48 28 60 8zM60 60C72 76 72 92 60 112 48 92 48 76 60 60zM8 60C28 48 44 48 60 60 44 72 28 72 8 60zM60 60C76 48 92 48 112 60 92 72 76 72 60 60zM60 34C40 34 30 20 38 10M60 34C80 34 90 20 82 10M60 86C40 86 30 100 38 110M60 86C80 86 90 100 82 110'/%3E%3Ccircle cx='60' cy='60' r='5'/%3E%3C/g%3E%3C/svg%3E");
+  box-shadow:none}
+section{position:relative;padding:56px 28px;text-align:center}
+.reveal{opacity:0;transform:translateY(26px);transition:opacity 1s ease,transform 1s ease}
+.reveal.in{opacity:1;transform:none}
+.eyebrow{font-family:var(--serif);font-weight:700;letter-spacing:.2em;font-size:13px;text-transform:uppercase}
+.title{font-family:var(--serif);font-weight:700;letter-spacing:.1em;font-size:20px;text-transform:uppercase;margin-bottom:22px}
+.floral{position:absolute;pointer-events:none;width:170px;opacity:.95}
+
+/* hero */
+.hero{padding-top:46px;min-height:640px}
+.hero .eyebrow{position:relative;z-index:2}
+.frame{position:relative;width:min(100%,430px);margin:30px auto 0}
+.frame img.border{display:block;width:100%;height:auto;mix-blend-mode:multiply}
+.names{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;font-family:var(--display);font-size:27px;line-height:1.35;color:var(--gold);text-transform:uppercase;letter-spacing:.03em}
+.names .amp{display:block;font-family:var(--script);font-size:26px;text-transform:none;margin:4px 0}
+
+/* ceremony info */
+.parents{display:grid;grid-template-columns:1fr 1px 1fr;gap:12px;align-items:center;margin:8px auto 40px}
+.parents .vr{background:var(--gold-l);height:80px;opacity:.7}
+.parents p{font-family:var(--serif);font-size:13px;line-height:1.7}
+.parents b{font-size:11px;letter-spacing:.04em}
+.lead{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:600;font-size:26px;line-height:1.45;color:var(--gold);margin-top:6px}
+.invite-line{font-family:var(--script);font-size:24px;line-height:1.5;color:var(--gold)}
+.big-names{font-family:var(--display);font-size:38px;line-height:1.2;color:var(--olive);margin-top:22px}
+.big-names .amp{display:block;font-family:var(--script);font-size:24px;color:var(--gold)}
+
+/* event cards */
+.event{margin:34px auto 0;padding:30px 20px;max-width:380px;border:1px solid var(--gold-l);border-radius:6px;background:rgba(255,255,255,.6)}
+.event .name{font-family:var(--display);font-size:26px;color:var(--olive)}
+.event .place{font-family:var(--serif);font-size:16px;margin:6px 0}
+.event .at{font-family:var(--serif);font-size:12px;letter-spacing:.2em;margin:10px 0 2px}
+.event .time{font-family:var(--display);font-size:36px}
+.dateline{display:flex;justify-content:center;align-items:center;gap:14px;font-family:var(--serif);font-weight:700;letter-spacing:.15em;font-size:13px;margin-top:10px}
+.dateline .d{font-family:var(--display);font-size:34px;letter-spacing:0}
+.dateline i{width:1px;height:34px;background:var(--gold-l)}
+
+/* gallery */
+.gallery{position:relative;max-width:380px;margin:0 auto}
+.slide{aspect-ratio:4/5;border-radius:6px;display:none;place-items:center;font-family:var(--serif);color:#fff;font-size:15px;letter-spacing:.1em;
+  background:linear-gradient(160deg,#d9a86a,#b97d3e)}
+.slide.on{display:grid}
+.gnav{display:flex;align-items:center;justify-content:center;gap:18px;margin-top:14px;font-family:var(--serif)}
+.gnav button{background:none;border:1px solid var(--gold-l);color:var(--gold);width:34px;height:34px;border-radius:50%;cursor:pointer;font-size:16px}
+
+/* countdown */
+.count{display:flex;justify-content:center;gap:12px;margin:18px 0 28px}
+.count div{width:70px;padding:12px 0;border:1px solid var(--gold-l);border-radius:6px;background:rgba(255,255,255,.6)}
+.count b{display:block;font-family:var(--display);font-size:28px;font-weight:400}
+.count span{font-family:var(--serif);font-size:11px;letter-spacing:.14em;text-transform:uppercase}
+.cal{max-width:320px;margin:0 auto;font-family:var(--serif)}
+.cal h4{font-family:var(--serif);font-size:17px;letter-spacing:.08em;margin-bottom:10px}
+.cal .grid{display:grid;grid-template-columns:repeat(7,1fr);gap:6px 0;font-size:14px}
+.cal .grid span{padding:5px 0;border-radius:50%}
+.cal .grid .h{font-weight:700;font-size:12px;color:var(--olive)}
+.cal .grid .hit{background:var(--gold);color:#fff;font-weight:700}
+
+/* venue etc */
+.venue-name{font-family:var(--display);font-size:26px;color:var(--olive);margin:4px 0}
+.muted{font-family:var(--serif);font-size:16px}
+.dress{font-family:var(--script);font-size:32px;margin-top:8px}
+.timeline{max-width:340px;margin:0 auto;text-align:left;position:relative}
+.timeline::before{content:"";position:absolute;left:58px;top:6px;bottom:6px;width:1px;background:var(--gold-l)}
+.timeline div{display:flex;gap:26px;padding:9px 0;align-items:baseline;font-family:var(--serif);font-size:16px}
+.timeline b{width:46px;font-family:var(--display);font-weight:400;font-size:17px;color:var(--olive)}
+
+/* guestbook */
+.wishes{max-width:380px;margin:0 auto 20px;text-align:left}
+.wish{padding:14px 16px;border:1px solid rgba(217,168,106,.6);border-radius:6px;background:rgba(255,255,255,.6);margin-bottom:10px}
+.wish b{font-family:var(--serif);color:var(--olive)}
+.wish small{display:block;font-size:11px;opacity:.7;margin:2px 0 6px}
+.wish p{font-family:var(--serif);font-size:15px;line-height:1.45}
+form.wf{max-width:380px;margin:0 auto;display:grid;gap:10px}
+form.wf input,form.wf textarea{width:100%;padding:11px 14px;border:1px solid var(--gold-l);border-radius:6px;background:#fff;font:inherit;color:var(--ink)}
+
+/* gift */
+.gift{width:130px;height:130px;margin:6px auto 12px;border-radius:14px;cursor:pointer;display:grid;place-items:center;font-size:54px;
+  background:linear-gradient(145deg,#d9a86a,#b97d3e);color:#fff;box-shadow:0 10px 24px rgba(120,70,20,.3);transition:transform .3s}
+.gift:hover{transform:rotate(-3deg) scale(1.04)}
+.gift-info{display:none;max-width:320px;margin:12px auto 0;padding:14px;border:1px dashed var(--gold);border-radius:6px;font-family:var(--serif);font-size:15px}
+.gift-info.show{display:block}
+.cal{position:relative;width:min(100%,460px);aspect-ratio:1448/1086;padding:9% 17%;display:flex;flex-direction:column;justify-content:center}
+.cal h4{margin-bottom:4px!important;font-size:17px!important}
+.cal .grid{font-size:13px!important;gap:2px 0!important}
+.cal::before{content:"";position:absolute;inset:0;background:url(assets/cal-frame.webp) center/100% 100% no-repeat;mix-blend-mode:multiply;pointer-events:none}
+.cal>*{position:relative}
+.cal h4{color:var(--olive);font-size:19px;letter-spacing:.02em}
+.cal .grid .h{border-bottom:0;color:#b9bd8a}
+.cal .grid{font-family:var(--body);color:var(--olive)}
+.cal .grid span{padding:7px 0;border-radius:0}
+.cal .grid .hit{background:none;color:#fff;position:relative;isolation:isolate}
+.cal .grid .hit::before{content:"♥";position:absolute;left:50%;top:50%;transform:translate(-50%,-52%);font-size:38px;line-height:1;color:var(--gold);z-index:-1}
+.cc{position:absolute;width:62px;height:62px;pointer-events:none;z-index:2}
+.cc.tl{top:2px;left:2px}.cc.tr{top:2px;right:2px}.cc.bl{bottom:2px;left:2px}.cc.br{bottom:2px;right:2px}
+.lnk{background:none;border:0;border-bottom:1px solid var(--olive);color:var(--olive);font-family:var(--serif);font-weight:600;font-size:16px;cursor:pointer;margin-top:14px;padding:0 2px}
+.btn.big{text-transform:uppercase;font-size:17px;padding:13px 34px;width:100%;margin:6px auto 0}
+.flourish{display:block;width:280px;height:auto;margin:34px auto 0;mix-blend-mode:multiply}
+.floral{height:auto}
+#musicBtn{position:fixed;right:16px;bottom:16px;z-index:60;width:46px;height:46px;border-radius:50%;border:1px solid #e3c9a0;background:rgba(252,248,240,.95);color:var(--gold);font-size:22px;cursor:pointer;place-items:center;box-shadow:0 4px 14px rgba(90,50,10,.25);animation:spin 6s linear infinite}
+#musicBtn.off{animation:none;opacity:.7}
+@keyframes spin{to{transform:rotate(360deg)}}
+.names{font-family:'Playfair Display',serif;font-size:37px;text-transform:none;letter-spacing:.01em;line-height:1.2;font-weight:500}
+.names .amp{font-family:'Great Vibes',cursive;font-size:36px;margin:2px 0}
+.hero .eyebrow{font-size:19px;letter-spacing:.12em;-webkit-text-stroke:.6px currentColor}
+main{background-image:linear-gradient(180deg,#fcf8f0 0%,#f7eedd 50%,#fcf8f0 100%);box-shadow:0 0 36px rgba(90,50,10,.18)}
+.cover-card{box-shadow:0 12px 30px rgba(90,50,10,.22)}
+.cal .grid span{padding:4px 0}
+footer{padding:36px 20px 50px;text-align:center;font-family:var(--serif);font-size:15px}
+.orn{font-size:22px;margin:10px 0}
+.hr{width:60px;height:1px;background:var(--gold-l);margin:22px auto}
+</style>
+</head>
+<body class="locked">
+
+<!-- reusable ornament symbols -->
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <linearGradient id="goldS" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="380" y2="520">
+      <stop offset="0" stop-color="#e8c887"/><stop offset=".3" stop-color="#b97d3e"/><stop offset=".55" stop-color="#f0d9a0"/><stop offset=".8" stop-color="#a86d2f"/><stop offset="1" stop-color="#e2bd78"/>
+    </linearGradient>
+    <radialGradient id="petal" cx=".5" cy="1" r="1.05">
+      <stop offset="0" stop-color="#f1dcae"/><stop offset=".35" stop-color="#fffaf0"/><stop offset="1" stop-color="#f3e8d2"/>
+    </radialGradient>
+    <radialGradient id="petal2" cx=".5" cy="1" r="1.05">
+      <stop offset="0" stop-color="#ecd29a"/><stop offset=".45" stop-color="#fffdf6"/><stop offset="1" stop-color="#f8f0de"/>
+    </radialGradient>
+    <linearGradient id="leafG" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#7f8a5a"/><stop offset="1" stop-color="#b6c08f"/>
+    </linearGradient>
+    <linearGradient id="goldF" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f0d9a0"/><stop offset="1" stop-color="#b97d3e"/></linearGradient>
+
+    <path id="pt" d="M0 0 C-19 -13 -17 -43 0 -51 C17 -43 19 -13 0 0Z"/>
+    <g id="leaf">
+      <path d="M0 0 C10 -11 30 -12 44 0 C30 12 10 11 0 0Z" fill="url(#leafG)" stroke="#6f7a4c" stroke-width=".6"/>
+      <path d="M2 0 L40 0" stroke="#5f6a3f" stroke-width=".7" fill="none"/>
+    </g>
+    <g id="flower">
+      <g fill="url(#petal)" stroke="#cfbf9c" stroke-width=".8">
+        <use href="#pt"/><use href="#pt" transform="rotate(45)"/><use href="#pt" transform="rotate(90)"/><use href="#pt" transform="rotate(135)"/>
+        <use href="#pt" transform="rotate(180)"/><use href="#pt" transform="rotate(225)"/><use href="#pt" transform="rotate(270)"/><use href="#pt" transform="rotate(315)"/>
+      </g>
+      <g fill="url(#petal2)" stroke="#d6c7a4" stroke-width=".7" transform="scale(.66)">
+        <use href="#pt" transform="rotate(22)"/><use href="#pt" transform="rotate(82)"/><use href="#pt" transform="rotate(142)"/>
+        <use href="#pt" transform="rotate(202)"/><use href="#pt" transform="rotate(262)"/><use href="#pt" transform="rotate(322)"/>
+      </g>
+      <g stroke="#d9b36a" stroke-width=".8" fill="none">
+        <path d="M0 -4 L0 -34 M0 -4 L24 -26 M0 -4 L-24 -26 M0 4 L0 34 M4 0 L34 0 M-4 0 L-34 0" opacity=".45"/>
+      </g>
+      <circle r="9" fill="#e6c26a"/><circle r="5" fill="#c9962f"/>
+      <g fill="#b9801f">
+        <circle cx="0" cy="-13" r="1.8"/><circle cx="9" cy="-9" r="1.8"/><circle cx="13" cy="0" r="1.8"/><circle cx="9" cy="9" r="1.8"/>
+        <circle cx="0" cy="13" r="1.8"/><circle cx="-9" cy="9" r="1.8"/><circle cx="-13" cy="0" r="1.8"/><circle cx="-9" cy="-9" r="1.8"/>
+      </g>
+    </g>
+    <g id="bud">
+      <path d="M0 0 C-8 -8 -6 -22 0 -26 C6 -22 8 -8 0 0Z" fill="url(#petal)" stroke="#cfbf9c" stroke-width=".7"/>
+      <path d="M0 0 C-5 4 -9 2 -10 -4 M0 0 C5 4 9 2 10 -4" fill="none" stroke="#7f8a5a" stroke-width="1.2"/>
+    </g>
+    <g id="berries" fill="url(#goldF)"><circle cx="0" cy="0" r="3"/><circle cx="8" cy="-5" r="2.4"/><circle cx="-6" cy="-9" r="2.2"/><circle cx="3" cy="-14" r="1.8"/></g>
+
+    <symbol id="spray" viewBox="0 0 160 160">
+      <path d="M6 156 C34 118 64 86 148 14" fill="none" stroke="#7f8a5a" stroke-width="2.4" stroke-linecap="round"/>
+      <use href="#leaf" transform="translate(30 126) rotate(-100) scale(.7)"/>
+      <use href="#leaf" transform="translate(40 116) rotate(-10) scale(.75)"/>
+      <use href="#leaf" transform="translate(62 94) rotate(-120) scale(.8)"/>
+      <use href="#leaf" transform="translate(78 82) rotate(-18) scale(.8)"/>
+      <use href="#leaf" transform="translate(104 58) rotate(-125) scale(.7)"/>
+      <use href="#leaf" transform="translate(118 44) rotate(-24) scale(.65)"/>
+      <use href="#leaf" transform="translate(134 28) rotate(-130) scale(.55)"/>
+      <use href="#flower" transform="translate(40 100) scale(.4)"/>
+      <use href="#flower" transform="translate(84 62) scale(.31)"/>
+      <use href="#flower" transform="translate(16 136) scale(.2)"/>
+      <use href="#bud" transform="translate(118 36) rotate(40) scale(.7)"/>
+      <use href="#berries" transform="translate(60 120) scale(.8)"/>
+      <use href="#berries" transform="translate(104 78) scale(.7)"/>
+    </symbol>
+
+    <g id="scrollC" fill="none" stroke="url(#goldS)" stroke-linecap="round" stroke-width="2.2">
+      <path d="M0 0 C28 -2 48 8 50 28 C51 42 38 48 30 41 C24 35 29 26 36 29"/>
+      <path d="M0 0 C-2 28 8 48 28 50 C42 51 48 38 41 30 C35 24 26 29 29 36"/>
+      <path d="M12 12 C26 14 34 22 32 34" stroke-width="1.3"/>
+      <path d="M12 12 C14 26 22 34 34 32" stroke-width="1.3"/>
+      <path d="M52 6 C60 6 66 10 70 16" stroke-width="1.4"/><path d="M6 52 C6 60 10 66 16 70" stroke-width="1.4"/>
+      <circle cx="74" cy="20" r="2.6" fill="url(#goldF)" stroke="none"/><circle cx="20" cy="74" r="2.6" fill="url(#goldF)" stroke="none"/>
+    </g>
+    <g id="crest" fill="none" stroke="url(#goldS)" stroke-linecap="round" stroke-width="2.2">
+      <path d="M0 -34 C9 -20 9 -8 0 4 C-9 -8 -9 -20 0 -34Z" fill="url(#goldF)" stroke-width="1.2"/>
+      <path d="M0 2 C16 6 34 0 42 -14 C46 -22 38 -28 32 -22 C28 -18 33 -12 38 -15"/>
+      <path d="M0 2 C-16 6 -34 0 -42 -14 C-46 -22 -38 -28 -32 -22 C-28 -18 -33 -12 -38 -15"/>
+      <path d="M0 -12 C-14 -14 -24 -24 -20 -34 M0 -12 C14 -14 24 -24 20 -34" stroke-width="1.4"/>
+      <circle cx="0" cy="-40" r="3" fill="url(#goldF)" stroke="none"/><circle cx="-24" cy="-38" r="2" fill="url(#goldF)" stroke="none"/><circle cx="24" cy="-38" r="2" fill="url(#goldF)" stroke="none"/>
+      <path d="M-60 10 C-40 18 -24 14 -14 6 M60 10 C40 18 24 14 14 6" stroke-width="1.6"/>
+    </g>
+    <g id="side" fill="none" stroke="url(#goldS)" stroke-linecap="round" stroke-width="1.8">
+      <path d="M0 -26 C8 -14 8 -6 0 0 C-8 -6 -8 -14 0 -26Z" fill="url(#goldF)" stroke-width="1" transform="rotate(90)"/>
+      <path d="M-14 0 C-14 14 -2 22 6 16 M-14 0 C-14 -14 -2 -22 6 -16"/>
+    </g>
+
+    <symbol id="frame" viewBox="0 0 380 520">
+      <g fill="none" stroke="url(#goldS)">
+        <path id="cart" stroke-width="3.2" d="M60 100 C60 78 78 72 100 74 C140 78 160 66 190 62 C220 66 240 78 280 74 C302 72 320 78 320 100 C320 150 312 190 322 230 C328 260 328 270 322 300 C312 340 320 400 320 424 C320 446 302 448 280 446 C240 442 220 456 190 458 C160 456 140 442 100 446 C78 448 60 446 60 424 C60 380 68 340 58 300 C52 270 52 250 58 230 C68 190 60 150 60 100Z"/>
+        <use href="#cart" transform="translate(190 260) scale(.95 .96) translate(-190 -260)" stroke-width="1.1"/>
+        <use href="#cart" transform="translate(190 260) scale(.975 .98) translate(-190 -260)" stroke-width=".7" stroke-dasharray="1.5 4" stroke-linecap="round"/>
+      </g>
+      <use href="#scrollC" transform="translate(62 82)"/>
+      <use href="#scrollC" transform="translate(318 82) scale(-1 1)"/>
+      <use href="#scrollC" transform="translate(62 440) scale(1 -1)"/>
+      <use href="#scrollC" transform="translate(318 440) scale(-1 -1)"/>
+      <use href="#crest" transform="translate(190 64)"/>
+      <use href="#crest" transform="translate(190 456) scale(1 -1)"/>
+      <use href="#side" transform="translate(56 260)"/>
+      <use href="#side" transform="translate(324 260) scale(-1 1)"/>
+
+      <use href="#leaf" transform="translate(46 262) rotate(-70) scale(.9)"/>
+      <use href="#leaf" transform="translate(46 262) rotate(70) scale(.9)"/>
+      <use href="#leaf" transform="translate(46 262) rotate(-135) scale(.8)"/>
+      <use href="#flower" transform="translate(50 250) scale(.62)"/>
+      <use href="#flower" transform="translate(52 306) scale(.42) rotate(18)"/>
+      <use href="#bud" transform="translate(66 214) rotate(-20) scale(.9)"/>
+      <use href="#berries" transform="translate(70 284)"/>
+
+      <use href="#leaf" transform="translate(318 440) rotate(-160) scale(1.2)"/>
+      <use href="#leaf" transform="translate(318 440) rotate(-110) scale(1.1)"/>
+      <use href="#leaf" transform="translate(318 440) rotate(150) scale(1)"/>
+      <use href="#leaf" transform="translate(318 440) rotate(-60) scale(1)"/>
+      <use href="#flower" transform="translate(320 432) scale(.8)"/>
+      <use href="#flower" transform="translate(268 462) scale(.5) rotate(10)"/>
+      <use href="#flower" transform="translate(346 372) scale(.45) rotate(-14)"/>
+      <use href="#bud" transform="translate(292 400) rotate(-30)"/>
+      <use href="#berries" transform="translate(300 474) scale(1.1)"/>
+      <use href="#berries" transform="translate(348 410) scale(1.1)"/>
+
+      <use href="#leaf" transform="translate(58 94) rotate(-20) scale(.7)"/>
+      <use href="#berries" transform="translate(76 96)"/>
+    </symbol>
+
+    <pattern id="damask" width="120" height="120" patternUnits="userSpaceOnUse">
+      <g fill="none" stroke="#b97d3e" stroke-width="1.2" opacity=".5">
+        <path d="M60 8 C72 28 72 44 60 60 C48 44 48 28 60 8Z"/>
+        <path d="M60 60 C72 76 72 92 60 112 C48 92 48 76 60 60Z"/>
+        <path d="M8 60 C28 48 44 48 60 60 C44 72 28 72 8 60Z"/>
+        <path d="M60 60 C76 48 92 48 112 60 C92 72 76 72 60 60Z"/>
+        <path d="M60 34 C40 34 30 20 38 10 M60 34 C80 34 90 20 82 10 M60 86 C40 86 30 100 38 110 M60 86 C80 86 90 100 82 110"/>
+        <circle cx="60" cy="60" r="5"/>
+      </g>
+    </pattern>
+  </defs>
+</svg>
+
+<audio id="bgm" src="assets/music.mp3" loop preload="auto"></audio>
+<button id="musicBtn" aria-label="Toggle music" style="display:none">♫</button>
+
+<!-- ============ COVER ============ -->
+<div id="cover">
+  <div class="cover-card">
+    <img class="corner tl" src="assets/corner-tl.webp" alt="">
+    <img class="corner br" src="assets/corner-br.webp" alt="">
+    <div class="badge">♥</div>
+    <h1>Abdulrahman<span class="amp">&amp;</span>Buthaina</h1>
+    <div class="date" id="coverDate"></div>
+    <div class="sub">Cordially Invites</div>
+    <button class="btn" id="openBtn">Open</button>
+  </div>
+</div>
+
+<!-- ============ MAIN ============ -->
+<main id="page">
+
+  <section class="hero">
+    <img class="floral" src="assets/magnolia-b.webp" alt="" style="top:-20px;right:-10px;width:170px;opacity:.38;transform:scaleX(-1);mix-blend-mode:multiply">
+    <img class="floral" src="assets/sprig.webp" alt="" style="bottom:6px;left:-10px;width:165px;mix-blend-mode:multiply">
+    <div class="eyebrow reveal">Welcome to our engagement</div>
+    <div class="frame reveal">
+      <img class="border" src="assets/frame.webp" alt="">
+      <div class="names">Abdulrahman<span class="amp">&amp;</span>Buthaina</div>
+    </div>
+  </section>
+
+  <section>
+    <div class="title reveal">Engagement Info</div>
+    <p class="lead reveal">Together with our families,<br>we joyfully invite you to celebrate<br>our engagement</p>
+    <div class="big-names reveal">Abdulrahman<span class="amp">&amp;</span>Buthaina</div>
+
+    <div class="event reveal">
+      <div class="eyebrow">Engagement Ceremony</div>
+      <div class="name" style="margin-top:10px">Ce La Vie Nile Lotus</div>
+      <div class="at">AT</div>
+      <div class="time" id="t1"></div>
+      <div class="dateline"><span class="dow"></span><i></i><span class="d dd"></span><i></i><span class="mon"></span></div>
+      <div class="dateline" style="margin-top:2px"><span class="yy"></span></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="title reveal">Photo Gallery</div>
+    <div class="gallery reveal">
+      <div class="slide on">Photo 1</div><div class="slide">Photo 2</div><div class="slide">Photo 3</div><div class="slide">Photo 4</div>
+      <div class="gnav"><button id="gp">‹</button><span id="gc">1 / 4</span><button id="gn">›</button></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="title reveal">Event Details</div>
+    <p class="muted reveal">The celebration will take place on</p>
+    <div class="event reveal" style="margin-top:16px">
+      <div class="time" id="t3"></div>
+      <div class="dateline"><span class="dow"></span><i></i><span class="d dd"></span><i></i><span class="mon"></span></div>
+      <div class="dateline" style="margin-top:2px"><span class="yy"></span></div>
+    </div>
+
+    <div class="title reveal" style="margin-top:46px">Countdown</div>
+    <div class="count reveal">
+      <div><b id="cd">0</b><span>Days</span></div><div><b id="ch">0</b><span>Hours</span></div>
+      <div><b id="cm">0</b><span>Min</span></div><div><b id="cs">0</b><span>Sec</span></div>
+    </div>
+    <div class="cal reveal">
+      <h4 id="calTitle"></h4><div class="grid" id="calGrid"></div></div>
+    <button class="lnk reveal" id="addCal">Add to Calendar</button>
+  </section>
+
+  <section>
+    <div class="title reveal">Confirm Attendance</div>
+    <form class="wf reveal" onsubmit="event.preventDefault();this.innerHTML='<p class=muted>Thank you — we have received your reply ♥</p>'">
+      <input required placeholder="Your name">
+      <input type="number" min="1" max="10" placeholder="Number of guests">
+      <button class="btn big">Confirm Attendance</button>
+    </form>
+    <img class="flourish" src="assets/flourish.webp" alt="">
+  </section>
+
+  <section>
+    <img class="floral" src="assets/magnolia-a.webp" alt="" style="top:0;left:0;width:140px;opacity:.4;mix-blend-mode:multiply;-webkit-mask-image:linear-gradient(to bottom,#000 55%,transparent);mask-image:linear-gradient(to bottom,#000 55%,transparent)">
+    <div class="title reveal">Venue</div>
+    <div class="venue-name reveal">Ce La Vie Nile Lotus</div>
+    <a class="btn reveal" target="_blank" rel="noopener" style="text-decoration:none;margin-top:16px" href="https://www.google.com/maps/place/%D9%85%D8%B1%D8%B3%D9%89+%D8%A7%D9%84%D9%86%D9%87%D8%B1+%D8%A7%D9%84%D8%AE%D8%A7%D9%84%D8%AF%E2%80%AD/@29.9491488,31.2637794,17z/data=!3m1!4b1!4m6!3m5!1s0x1458395708273805:0x78ba78abc15cd1f!8m2!3d29.9491488!4d31.2637794!16s%2Fg%2F11jjmrkfts?entry=ttu&amp;g_ep=EgoyMDI2MTExMC4wIKXMDSoASAFQAw%3D%3D">Get directions</a>
+    <div class="title reveal" style="margin-top:50px">Dress Code</div>
+    <div class="dress reveal">Formal Attire</div>
+  </section>
+
+  <section>
+    <div class="title reveal">Guestbook</div>
+    <div class="wishes reveal" id="wishes"></div>
+    <form class="wf reveal" id="wf">
+      <input required id="wn" placeholder="Your name">
+      <textarea required id="wm" rows="3" placeholder="Write your wishes…"></textarea>
+      <button class="btn" style="margin-top:4px">Send Wishes</button>
+    </form>
+  </section>
+
+  <section>
+    <div class="title reveal">Gift Box</div>
+    <div class="gift reveal" id="gift">🎁</div>
+    <div class="muted reveal">Tap to open</div>
+    <div class="gift-info" id="giftInfo">Bank details to be added here.</div>
+  </section>
+
+  <footer>
+    <div class="orn">❦</div>
+    <p class="invite-line" style="font-size:22px">Your presence would be the greatest gift we could receive!</p>
+    <div class="hr"></div>
+    <p>♡ Abdulrahman &amp; Buthaina</p>
+  </footer>
+</main>
+
+<script>
+/* ======= EDIT HERE ======= */
+const EVENT = new Date(2026, 11, 4, 15, 0);   // year, month(0-11), day, hour, minute — 4 December 2026, 3:00 PM
+const TIME1 = "03:00 PM";
+const VENUE = "Ce La Vie Nile Lotus";
+/* ========================= */
+
+const $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)];
+const MONTHS = ["JANUARY","FEBRUARY","MARCH","APRIL","MAY","JUNE","JULY","AUGUST","SEPTEMBER","OCTOBER","NOVEMBER","DECEMBER"];
+const DOW = ["SUNDAY","MONDAY","TUESDAY","WEDNESDAY","THURSDAY","FRIDAY","SATURDAY"];
+const pad = n => String(n).padStart(2,"0");
+
+$("#coverDate").textContent = MONTHS[EVENT.getMonth()][0] + MONTHS[EVENT.getMonth()].slice(1).toLowerCase() + " " + EVENT.getDate() + ", " + EVENT.getFullYear();
+$("#t1").textContent = TIME1; $("#t3").textContent = TIME1;
+$$(".dow").forEach(e => e.textContent = DOW[EVENT.getDay()]);
+$$(".dd").forEach(e => e.textContent = pad(EVENT.getDate()));
+$$(".mon").forEach(e => e.textContent = MONTHS[EVENT.getMonth()]);
+$$(".yy").forEach(e => e.textContent = EVENT.getFullYear());
+
+$("#openBtn").onclick = () => { $("#cover").classList.add("gone"); document.body.classList.remove("locked"); window.scrollTo(0,0); observe(); };
+
+/* background music — put your song at assets/music.mp3 */
+const bgm = $("#bgm"), mbtn = $("#musicBtn");
+function setMusicUI(){ mbtn.classList.toggle("off", bgm.paused); mbtn.textContent = bgm.paused ? "♪" : "♫"; }
+bgm.addEventListener("error", () => { mbtn.style.display = "none"; });
+bgm.addEventListener("play", setMusicUI); bgm.addEventListener("pause", setMusicUI);
+$("#openBtn").addEventListener("click", () => { bgm.volume = .6; bgm.play().then(() => { mbtn.style.display = "grid"; setMusicUI(); }).catch(() => {}); });
+mbtn.onclick = () => bgm.paused ? bgm.play() : bgm.pause();
+
+/* scroll reveal */
+function observe(){
+  const io = new IntersectionObserver(es => es.forEach(e => { if(e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target); } }), {threshold:.15});
+  $$(".reveal").forEach(el => io.observe(el));
+}
+
+/* gallery */
+let gi = 0; const slides = $$(".slide");
+function showSlide(n){ gi = (n + slides.length) % slides.length; slides.forEach((s,i)=>s.classList.toggle("on", i===gi)); $("#gc").textContent = (gi+1)+" / "+slides.length; }
+$("#gp").onclick = () => showSlide(gi-1); $("#gn").onclick = () => showSlide(gi+1);
+
+/* countdown */
+function tick(){
+  let d = Math.max(0, EVENT - new Date()) / 1000;
+  $("#cd").textContent = Math.floor(d/86400); $("#ch").textContent = Math.floor(d%86400/3600);
+  $("#cm").textContent = Math.floor(d%3600/60); $("#cs").textContent = Math.floor(d%60);
+}
+tick(); setInterval(tick, 1000);
+
+/* calendar */
+(function(){
+  const y = EVENT.getFullYear(), m = EVENT.getMonth();
+  $("#calTitle").textContent = MONTHS[m][0] + MONTHS[m].slice(1).toLowerCase() + " " + y;
+  let html = ["Mo","Tu","We","Th","Fr","Sa","Su"].map(d=>`<span class="h">${d}</span>`).join("");
+  const first = (new Date(y,m,1).getDay()+6)%7, days = new Date(y,m+1,0).getDate();
+  html += "<span></span>".repeat(first);
+  for(let d=1; d<=days; d++) html += `<span class="${d===EVENT.getDate()?'hit':''}">${d}</span>`;
+  $("#calGrid").innerHTML = html;
+})();
+$("#addCal").onclick = () => {
+  const f = d => d.getUTCFullYear()+pad(d.getUTCMonth()+1)+pad(d.getUTCDate())+"T"+pad(d.getUTCHours())+pad(d.getUTCMinutes())+"00Z";
+  const end = new Date(EVENT.getTime()+4*3600e3);
+  const ics = ["BEGIN:VCALENDAR","VERSION:2.0","BEGIN:VEVENT","SUMMARY:Abdulrahman & Buthaina — Engagement","DTSTART:"+f(EVENT),"DTEND:"+f(end),"LOCATION:"+VENUE,"END:VEVENT","END:VCALENDAR"].join("\r\n");
+  const a = document.createElement("a"); a.href = URL.createObjectURL(new Blob([ics],{type:"text/calendar"})); a.download = "engagement.ics"; a.click();
+};
+
+/* guestbook (local demo only) */
+const wishes = [
+  ["Sample Guest","Wishing you both a lifetime of love and happiness."],
+  ["Sample Guest","Congratulations! May your journey together be blessed."]
+];
+function renderWishes(){
+  $("#wishes").innerHTML = wishes.map(([n,m]) => `<div class="wish"><b>${n.replace(/</g,"&lt;")}</b><small>${new Date().toLocaleDateString()}</small><p>${m.replace(/</g,"&lt;")}</p></div>`).join("");
+}
+renderWishes();
+$("#wf").onsubmit = e => { e.preventDefault(); wishes.unshift([$("#wn").value,$("#wm").value]); renderWishes(); e.target.reset(); };
+
+/* gift */
+$("#gift").onclick = () => $("#giftInfo").classList.toggle("show");
+
+/* name font preview: ?names=2 or ?names=7 */
+(function(){
+  const n = new URLSearchParams(location.search).get("names");
+  const f = {"2":["'Cormorant Garamond',serif","600","44px"], "7":["'Playfair Display',serif","500","36px"]}[n];
+  if(!f) return;
+  const names = document.querySelector(".names");
+  names.style.fontFamily = f[0]; names.style.fontStyle = "italic"; names.style.fontWeight = f[1]; names.style.fontSize = f[2];
+})();
+</script>
+</body>
+</html>
