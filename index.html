@@ -235,8 +235,8 @@ html[dir="rtl"] .wr.in .pen{animation:penR var(--w) linear var(--d) forwards}
 #cover.ready .cv{opacity:1}
 
 #scrollBtn{position:fixed;left:50%;bottom:16px;transform:translateX(-50%);z-index:60;width:46px;height:46px;border-radius:50%;border:1px solid var(--gold-l);
-  background:rgba(255,252,246,.95);color:var(--gold-d);font-size:22px;line-height:1;cursor:pointer;place-items:center;padding:0 0 4px}
-#scrollBtn.on{font-size:13px;letter-spacing:1px;padding:0}
+  background:rgba(255,252,246,.95);color:var(--gold-d);cursor:pointer;display:grid;place-items:center;padding:0}
+#scrollBtn svg{width:22px;height:22px;display:block}
 
 /* floating buttons */
 #musicBtn,#langBtn{position:fixed;bottom:16px;z-index:60;width:46px;height:46px;border-radius:50%;border:1px solid var(--gold-l);
@@ -252,7 +252,7 @@ html[dir="rtl"] .wr.in .pen{animation:penR var(--w) linear var(--d) forwards}
 <audio id="bgm" src="assets/music.mp3" loop preload="none"></audio>
 <button id="musicBtn" aria-label="Toggle music" style="display:none">♫</button>
 <button id="langBtn" aria-label="Language">عربي</button>
-<button id="scrollBtn" aria-label="Start auto scroll" style="display:none">⌄</button>
+<button id="scrollBtn" aria-label="Start auto scroll" style="display:none"></button>
 
 <!-- ============ COVER: ENVELOPE ============ -->
 <div id="cover">
@@ -482,10 +482,12 @@ $$(".hero .frame img.border").forEach(i => {
 
 /* ---------- gentle auto-scroll: starts once when the invitation opens, any touch stops it ---------- */
 const sbtn = $("#scrollBtn");
+const ICON_DOWN = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6.5l6 6 6-6"/><path d="M6 12.5l6 6 6-6"/></svg>';
+const ICON_PAUSE = '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6.2" y="5" width="4" height="14" rx="1.3"/><rect x="13.8" y="5" width="4" height="14" rx="1.3"/></svg>';
 const AUTO_SPEED = 46;                       /* pixels per second - raise it to scroll faster */
 let autoOn = false, autoRaf = 0, autoPos = 0, autoLast = 0;
 function setAutoUI(){
-  sbtn.textContent = autoOn ? "❚❚" : "⌄"; sbtn.classList.toggle("on", autoOn);
+  sbtn.innerHTML = autoOn ? ICON_PAUSE : ICON_DOWN; sbtn.classList.toggle("on", autoOn);
   sbtn.setAttribute("aria-label", autoOn ? "Stop auto scroll" : "Start auto scroll");
 }
 function autoStep(t){
