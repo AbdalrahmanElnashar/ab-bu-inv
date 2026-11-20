@@ -1,12 +1,26 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Abdulrahman &amp; Buthaina — Engagement</title>
+<meta name="description" content="You are invited to celebrate the engagement of Abdulrahman &amp; Buthaina — Friday, 4 December 2026, Ce La Vie Nile Lotus.">
+<meta name="theme-color" content="#f7ecd9">
+
+<!-- WhatsApp / social preview card -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Abdulrahman &amp; Buthaina — Engagement Invitation">
+<meta property="og:description" content="You are invited to our engagement · Friday, 4 December 2026 · Ce La Vie Nile Lotus">
+<meta property="og:image" content="https://abdalrahmanelnashar.github.io/ab-bu-inv/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://abdalrahmanelnashar.github.io/ab-bu-inv/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23f7ecd9'/%3E%3Ctext x='32' y='47' font-size='40' text-anchor='middle' fill='%23b5834a'%3E%E2%99%A5%3C/text%3E%3C/svg%3E">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,500;1,600;1,700&family=Great+Vibes&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Amiri+Quran&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,500;1,600;1,700&family=Great+Vibes&display=swap" rel="stylesheet">
 <style>
 :root{
   --gold:#b5834a; --gold-d:#9f7036; --gold-l:#e6d0a6; --olive:#8f9163; --cream:#fffcf6;
@@ -18,6 +32,16 @@ body{font-family:var(--serif);font-weight:500;color:var(--gold-d);min-height:100
   background:linear-gradient(180deg,#f7ecd9,#fbf5e8);font-variant-numeric:lining-nums;-webkit-font-smoothing:antialiased}
 body.locked{overflow:hidden}
 
+/* ---------- Arabic mode ---------- */
+html[lang="ar"]{--serif:'Amiri','Cormorant Garamond',serif}
+html[lang="ar"] *{letter-spacing:0!important;text-indent:0!important;font-style:normal!important;text-transform:none!important}
+html[lang="ar"] .names{font-size:12.4cqw;line-height:1.3}
+html[lang="ar"] .nm{font-size:58px;line-height:1.45}
+html[lang="ar"] .lead{line-height:1.8;font-size:28px}
+html[lang="ar"] .ayah-tr{display:none}
+html[lang="ar"] .cal .grid{font-size:16px}
+.cal .grid{direction:ltr}
+
 /* ---------- shared ---------- */
 .frame{position:relative;container-type:inline-size;margin:0 auto}
 .frame img.border{display:block;width:100%;height:auto}
@@ -27,21 +51,38 @@ body.locked{overflow:hidden}
 .btn{display:inline-block;border:0;cursor:pointer;background:#bf9156;color:#fff;font-family:var(--serif);font-weight:700;letter-spacing:.08em;
   padding:11px 34px;border-radius:40px;font-size:17px;text-decoration:none;transition:background .2s}
 .btn:hover{background:#a97d44}
+.gt{background:linear-gradient(100deg,#9a6b2e 0%,#d1a45a 22%,#7f8250 48%,#d1a45a 74%,#9a6b2e 100%);background-size:260% 100%;
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;animation:shine 7s linear infinite;padding-bottom:.08em}
 
-/* ---------- Cover ---------- */
+/* ---------- Cover: envelope ---------- */
 #cover{position:fixed;inset:0;z-index:50;display:flex;align-items:center;justify-content:center;overflow:auto;
-  background:linear-gradient(165deg,#fcf6ea 0%,#f4e5c8 100%);transition:opacity .9s ease,visibility .9s}
+  background:radial-gradient(ellipse at 50% 35%,#fffaf0 0%,#f8ecd6 55%,#f1dfbc 100%);transition:opacity .9s ease,visibility .9s}
 #cover.gone{opacity:0;visibility:hidden}
 .cv{width:min(440px,100%);padding:18px 16px;text-align:center}
-.kicker{font-weight:700;font-size:clamp(17px,4.6vw,21px);letter-spacing:.26em;text-transform:uppercase;color:var(--gold)}
-.cv .frame{width:min(410px,92vw,calc((100vh - 320px) * .8));margin-top:8px}
-.cdate{margin-top:6px}
-.cdate .cw{font-weight:700;font-size:clamp(16px,4.4vw,19px);letter-spacing:.38em;text-indent:.38em;color:var(--gold-d)}
-.cdate .cn{display:flex;align-items:center;justify-content:center;gap:14px;font-style:italic;font-weight:700;font-size:clamp(46px,12.5vw,60px);line-height:1.05;color:var(--gold)}
-.cdate .cn i{flex:0 0 clamp(36px,12vw,64px);height:1px;background:linear-gradient(90deg,transparent,var(--gold))}
-.cdate .cn i:last-child{background:linear-gradient(270deg,transparent,var(--gold))}
-.cdate .cm{font-weight:700;font-size:clamp(17px,4.6vw,21px);letter-spacing:.3em;text-indent:.3em;color:var(--olive)}
-.btn.open{margin-top:16px;font-size:21px;padding:13px 54px}
+.kicker{font-weight:700;font-size:clamp(18px,5vw,22px);letter-spacing:.26em;text-transform:uppercase;color:var(--gold);transition:opacity .6s}
+.env{position:relative;width:min(380px,86vw);aspect-ratio:1.5;margin:clamp(110px,20vh,170px) auto 0;perspective:900px;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.env-back{position:absolute;inset:0;background:linear-gradient(#ecd8ad,#e0c590);border-radius:4px}
+.letter{position:absolute;left:5%;right:5%;bottom:5%;height:90%;z-index:2;background:linear-gradient(#fffefb,#fff8ea);border:1px solid #dcc08a;border-radius:3px;
+  display:flex;align-items:center;justify-content:center;transition:transform 1.25s cubic-bezier(.3,.85,.3,1) .75s}
+.letter::before{content:"";position:absolute;inset:6px;border:1px solid var(--gold-l);border-radius:2px;pointer-events:none}
+.lt-in{text-align:center;padding:0 10px;margin-top:-6%}
+.lt-orn{font-size:20px;color:var(--gold);line-height:1}
+.lt-names{margin-top:6px;font-style:italic;font-weight:700;font-size:clamp(25px,7.4vw,32px);line-height:1.15;color:var(--gold)}
+.lt-names .amp{display:block;font-family:var(--script);font-style:normal;font-weight:400;font-size:.9em;line-height:1.1;color:var(--gold-d)}
+.lt-date{margin-top:8px;font-weight:700;font-size:clamp(14px,3.9vw,16px);letter-spacing:.14em;color:var(--olive)}
+.env.open .letter{transform:translateY(-64%)}
+.pocket{position:absolute;inset:0;width:100%;height:100%;z-index:3;pointer-events:none}
+.flap{position:absolute;left:0;top:0;width:100%;height:61%;z-index:4;transform-origin:top center;
+  background:linear-gradient(#f0dcb2,#e4c995);clip-path:polygon(0 0,100% 0,50% 100%);transition:transform .95s ease,z-index 0s .45s}
+.env.open .flap{transform:rotateX(180deg);z-index:1}
+.seal{position:absolute;left:50%;top:60%;width:15%;aspect-ratio:1;z-index:5;transform:translate(-50%,-50%);border-radius:50%;
+  background:radial-gradient(circle at 35% 30%,#f3d596,#c9974f 58%,#a8742f);display:grid;place-items:center;color:#fff8e6;font-size:clamp(16px,4.6vw,22px);
+  transition:transform .45s ease,opacity .45s ease;animation:pulseSeal 2.2s ease-in-out infinite}
+.env.open .seal{transform:translate(-50%,-50%) scale(0);opacity:0;animation:none}
+@keyframes pulseSeal{0%,100%{transform:translate(-50%,-50%) scale(1)}50%{transform:translate(-50%,-50%) scale(1.1)}}
+.hint{margin-top:18px;font-style:italic;font-weight:600;font-size:19px;color:var(--olive);transition:opacity .5s}
+.btn.open{margin-top:12px;font-size:21px;padding:12px 54px;transition:opacity .5s,background .2s}
+.cv.opened .kicker,.cv.opened .hint,.cv.opened .btn.open{opacity:0;pointer-events:none}
 
 /* ---------- Page ---------- */
 main{max-width:520px;margin:0 auto;background:linear-gradient(180deg,#fffdf8,#fbf5ea 50%,#fffdf8);position:relative;overflow:hidden;
@@ -64,10 +105,15 @@ section{position:relative;padding:54px 28px;text-align:center}
 .hero .eyebrow{position:relative;z-index:2;font-weight:700;font-size:20px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-d)}
 .hero .frame{width:min(100%,430px);margin-top:26px}
 
+/* verse */
+.verse{padding-top:30px;padding-bottom:34px}
+.ayah{font-family:'Amiri Quran','Amiri',serif;font-size:clamp(25px,6.8vw,31px);line-height:2.05;color:var(--olive);margin-top:6px}
+.ayah-tr{font-style:italic;font-weight:600;font-size:21px;line-height:1.5;color:var(--gold);margin-top:10px}
+.ayah-ref{font-weight:700;font-size:15px;letter-spacing:.16em;color:var(--gold-d);margin-top:10px;text-transform:uppercase}
+
 /* engagement info */
 .lead{font-style:italic;font-weight:600;font-size:27px;line-height:1.4;color:var(--gold)}
-.info{overflow:hidden;background:radial-gradient(ellipse 70% 40% at 50% 38%,rgba(230,201,140,.22),transparent 70%)}
-.info{padding-bottom:130px}
+.info{overflow:hidden;padding-bottom:130px;background:radial-gradient(ellipse 70% 40% at 50% 38%,rgba(230,201,140,.22),transparent 70%)}
 .info .corner-img{position:absolute;pointer-events:none;width:118px;height:auto}
 .info .title{font-size:clamp(17px,5vw,22px);gap:10px}
 .orn-row{display:flex;align-items:center;justify-content:center;gap:14px;color:var(--gold);font-size:26px;margin:-6px 0 10px}
@@ -80,31 +126,32 @@ section{position:relative;padding:54px 28px;text-align:center}
 .amp2{display:flex;align-items:center;justify-content:center;gap:16px;width:100%;margin:20px 0 22px}
 .amp2 i{flex:0 0 70px;height:1px;background:linear-gradient(90deg,transparent,var(--gold))}
 .amp2 i:last-child{background:linear-gradient(270deg,transparent,var(--gold))}
-.amp2 b{font-family:var(--script);font-weight:400;font-size:64px;line-height:1;color:var(--gold);animation:beat 3.2s ease-in-out infinite}
-.mono{position:relative;width:150px;height:150px;margin:34px auto 22px;display:grid;place-items:center}
-.mono .ring{position:absolute;inset:0;border:2px dashed var(--gold);border-radius:50%;animation:spin 40s linear infinite}
-.mono::after{content:"";position:absolute;inset:13px;border:1px solid var(--gold);border-radius:50%}
-.mono-in{position:relative;display:flex;align-items:center;gap:8px;font-style:italic;font-weight:700;font-size:54px;line-height:1;color:var(--olive)}
-.mono-in em{font-style:normal;font-size:22px;color:var(--gold)}
-.pair2{display:flex;flex-direction:column;align-items:center;margin:0 0 12px}
-.nm2{font-weight:600;font-size:clamp(25px,8.2vw,38px);letter-spacing:.16em;text-indent:.16em;text-transform:uppercase;color:var(--olive);line-height:1.2}
-.and{display:flex;align-items:center;justify-content:center;gap:14px;width:100%;margin:12px 0 14px}
-.and i{flex:0 0 60px;height:1px;background:linear-gradient(90deg,transparent,var(--gold))}
-.and i:last-child{background:linear-gradient(270deg,transparent,var(--gold))}
-.and b{font-family:var(--script);font-weight:400;font-size:46px;line-height:1;color:var(--gold)}
+.amp2 b{font-family:var(--script);font-weight:400;font-size:64px;line-height:1;color:var(--gold)}
 .divider{display:flex;align-items:center;justify-content:center;gap:12px;margin:8px 0 6px;color:var(--gold)}
 .divider i{flex:0 0 70px;height:1px;background:linear-gradient(90deg,transparent,var(--gold))}
 .divider i:last-child{background:linear-gradient(270deg,transparent,var(--gold))}
-.event{margin:30px auto 0;padding:30px 18px 28px;max-width:380px;border:1px solid var(--gold-l);border-radius:6px;background:rgba(255,255,255,.7)}
-.event{padding:36px 18px 38px}
-.eyebrow-s{font-weight:700;letter-spacing:.22em;font-size:17px;text-transform:uppercase}
-.ename{font-weight:700;font-size:32px;line-height:1.2;color:var(--olive);margin:22px 0 20px}
-.at{font-weight:600;letter-spacing:.3em;font-size:15px;margin:0 0 12px}
-.time{font-weight:600;font-size:48px;line-height:1.1;color:var(--gold-d);margin:0 0 26px}
-.dl{border-top:1px solid var(--gold-l);padding-top:24px}
-.dw,.dm{font-weight:700;font-size:26px;letter-spacing:.3em;text-indent:.3em;line-height:1.2}
-.dn{font-weight:600;font-size:84px;line-height:1;color:var(--gold-d);margin:10px 0 8px}
-.dy{font-weight:600;font-size:26px;letter-spacing:.3em;text-indent:.3em;margin-top:10px;color:var(--olive)}
+
+/* ceremony card */
+.event{position:relative;margin:40px auto 0;padding:66px 24px 60px;max-width:400px;border:2px solid #d9bd86;border-radius:10px;
+  background:radial-gradient(ellipse at 50% 28%,rgba(255,255,255,.97),rgba(255,249,238,.78))}
+.event::before{content:"";position:absolute;inset:9px;border:1px solid var(--gold-l);border-radius:6px;pointer-events:none}
+.event .orn{position:absolute;width:86px;height:auto;pointer-events:none}
+.orn.tl{top:-10px;left:-10px}
+.orn.tr{top:-10px;right:-10px;transform:scaleX(-1)}
+.orn.bl{bottom:-10px;left:-10px;transform:scaleY(-1)}
+.orn.br{bottom:-10px;right:-10px;transform:scale(-1,-1)}
+.side{display:flex;align-items:center;justify-content:center;gap:12px}
+.side i{flex:0 0 clamp(18px,8vw,44px);height:1px;background:linear-gradient(90deg,transparent,var(--gold))}
+.side i:last-child{background:linear-gradient(270deg,transparent,var(--gold))}
+.ev-k{font-weight:700;letter-spacing:.14em;font-size:16px;text-transform:uppercase;color:var(--gold-d)}
+.ename{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:clamp(30px,8.6vw,38px);line-height:1.15;margin:20px 0 18px}
+.at{font-weight:700;letter-spacing:.3em;font-size:15px;color:var(--olive);margin-bottom:6px}
+.time{font-weight:700;font-size:clamp(46px,13vw,58px);line-height:1.1;margin:0 0 22px}
+.dl{padding-top:6px}
+.dw,.dm{font-weight:700;font-size:clamp(20px,5.8vw,25px);letter-spacing:.3em;line-height:1.2;color:var(--gold-d)}
+.dn{font-weight:700;font-size:clamp(78px,23vw,98px);line-height:1;margin:6px 0 4px}
+.dy{font-weight:700;font-size:24px;letter-spacing:.34em;margin-top:10px;color:var(--olive)}
+.ev-heart{margin-top:18px;font-size:22px;color:var(--gold);animation:pulse 1.8s ease-in-out infinite}
 
 /* countdown + calendar */
 .count{display:flex;justify-content:center;gap:10px;margin:6px 0 30px}
@@ -120,65 +167,69 @@ section{position:relative;padding:54px 28px;text-align:center}
 .cal .grid .h{font-weight:700;font-size:13px;color:#b9bd8a}
 .cal .grid .hit{color:#fff;position:relative;isolation:isolate}
 .cal .grid .hit::before{content:"♥";position:absolute;left:50%;top:50%;transform:translate(-50%,-52%);font-size:38px;line-height:1;color:#bf9156;z-index:-1}
-.lnk{background:none;border:0;border-bottom:1px solid var(--olive);color:var(--olive);font-family:var(--serif);font-weight:700;font-size:17px;cursor:pointer;margin-top:14px;padding:0 2px}
 .flourish{display:block;width:280px;height:auto;margin:34px auto 0}
 
 /* venue */
-.venue-name{font-weight:700;font-size:32px;line-height:1.15;color:var(--olive);margin:2px 0 18px}
+.venue-name{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:32px;line-height:1.15;color:var(--olive);margin:2px 0 18px}
 .map{width:100%;max-width:400px;height:260px;margin:0 auto 20px;border:1px solid var(--gold-l);border-radius:8px;overflow:hidden;background:#f1e7d3}
 .map iframe{width:100%;height:100%;border:0;display:block}
 
-/* guestbook */
-.wishes{max-width:380px;margin:0 auto 20px;text-align:left}
-.wish{padding:14px 16px;border:1px solid var(--gold-l);border-radius:6px;background:rgba(255,255,255,.7);margin-bottom:10px}
-.wish b{color:var(--olive);font-size:18px}
-.wish small{display:block;font-size:12px;opacity:.75;margin:2px 0 6px}
-.wish p{font-size:17px;line-height:1.4;font-weight:500}
-form.wf{max-width:380px;margin:0 auto;display:grid;gap:10px}
-form.wf input,form.wf textarea{width:100%;padding:11px 14px;border:1px solid var(--gold-l);border-radius:6px;background:#fff;font:inherit;font-size:17px;color:var(--gold-d)}
-
 footer{padding:34px 20px 54px;text-align:center}
-footer .orn{font-size:24px}
+footer .orn-f{font-size:24px}
 footer p{font-style:italic;font-weight:600;font-size:24px;line-height:1.4;color:var(--gold);margin-top:8px}
 .hr{width:60px;height:1px;background:var(--gold-l);margin:22px auto}
+.heart{display:inline-block;color:var(--gold);animation:pulse 1.6s ease-in-out infinite;margin:0 6px}
 
 /* ---------- motion ---------- */
 @keyframes shine{to{background-position:-260% 0}}
 @keyframes beat{0%,100%{transform:translate(-50%,-52%) scale(1)}50%{transform:translate(-50%,-52%) scale(1.16)}}
 @keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.08)}}
-@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
 @keyframes sway{0%,100%{rotate:-2.5deg}50%{rotate:2.5deg}}
 @keyframes pop{0%{transform:translateY(-8px);opacity:.2}100%{transform:none;opacity:1}}
-@keyframes rise{0%{transform:translate(0,0);opacity:0}12%{opacity:.85}85%{opacity:.5}100%{transform:translate(var(--dx),-112vh);opacity:0}}
-.amp2 b{animation-name:pulse}
+.amp2 b{animation:pulse 3.2s ease-in-out infinite}
 .cal .grid .hit::before{animation:beat 1.8s ease-in-out infinite}
 .count b.pop{animation:pop .45s ease}
 .floral{animation:sway 8s ease-in-out infinite}
 .btn.open{animation:pulse 2.4s ease-in-out infinite}
 /* handwriting reveal for the names */
 @keyframes write{from{clip-path:inset(-12px 101% -12px -12px)}to{clip-path:inset(-12px -16px -12px -12px)}}
+@keyframes writeR{from{clip-path:inset(-12px -12px -12px 101%)}to{clip-path:inset(-12px -12px -12px -16px)}}
 @keyframes pen{0%{left:0;opacity:1;transform:translateY(-6px)}25%{transform:translateY(5px)}50%{transform:translateY(-5px)}75%{transform:translateY(4px)}96%{opacity:1}100%{left:100%;opacity:0;transform:translateY(0)}}
+@keyframes penR{0%{left:100%;opacity:1;transform:translateY(-6px)}25%{transform:translateY(5px)}50%{transform:translateY(-5px)}75%{transform:translateY(4px)}96%{opacity:1}100%{left:0;opacity:0;transform:translateY(0)}}
 .wr{position:relative;display:inline-block}
 .wr .nm{display:inline-block;clip-path:inset(-12px 101% -12px -12px)}
 .wr.in .nm{animation:shine 7s linear infinite,write var(--w) linear var(--d) forwards}
+html[dir="rtl"] .wr .nm{clip-path:inset(-12px -12px -12px 101%)}
+html[dir="rtl"] .wr.in .nm{animation:shine 7s linear infinite,writeR var(--w) linear var(--d) forwards}
 .pen{position:absolute;top:50%;left:0;width:18px;height:18px;margin:-9px 0 0 -9px;border-radius:50%;opacity:0;pointer-events:none;
   background:radial-gradient(circle,#fff 0%,#f2d58f 40%,rgba(242,213,143,0) 72%)}
 .wr.in .pen{animation:pen var(--w) linear var(--d) forwards}
-.heart{display:inline-block;color:var(--gold);animation:pulse 1.6s ease-in-out infinite;margin:0 6px}
-#sparkles{position:fixed;inset:0;pointer-events:none;z-index:40;overflow:hidden}
-.sp{position:absolute;left:var(--x);bottom:-20px;width:var(--s);height:var(--s);border-radius:50%;
-  background:radial-gradient(circle,#fff7da 0%,#e9c98a 55%,rgba(233,201,138,0) 72%);opacity:0;animation:rise var(--t) linear infinite;animation-delay:var(--dl)}
+html[dir="rtl"] .wr.in .pen{animation:penR var(--w) linear var(--d) forwards}
+/* hearts + petals */
+#fx{position:fixed;inset:0;pointer-events:none;z-index:40;overflow:hidden}
+.fx{position:absolute;opacity:0;will-change:transform}
+.fx.heart{left:var(--x);bottom:-40px;font-size:var(--s);line-height:1;color:var(--c);margin:0;animation:floatUp var(--t) ease-in-out infinite;animation-delay:var(--dl)}
+.fx.petal{left:var(--x);top:-30px;width:var(--s);height:calc(var(--s) * 1.35);background:var(--c);border-radius:85% 0 85% 0;
+  border:1px solid rgba(207,154,123,.35);animation:fall var(--t) linear infinite;animation-delay:var(--dl)}
+.fx.burst{position:fixed;left:50%;top:46%;z-index:70;bottom:auto;animation:burst 1.9s cubic-bezier(.15,.7,.3,1) forwards}
+@keyframes floatUp{0%{transform:translate(0,0) rotate(-12deg) scale(.5);opacity:0}10%{opacity:.7}35%{transform:translate(var(--dx),-36vh) rotate(10deg) scale(1)}
+  70%{transform:translate(calc(var(--dx) * -1),-76vh) rotate(-9deg)}100%{transform:translate(calc(var(--dx) * .4),-118vh) rotate(8deg) scale(.9);opacity:0}}
+@keyframes fall{0%{transform:translate(0,0) rotate(0);opacity:0}8%{opacity:.85}50%{transform:translate(var(--dx),55vh) rotate(200deg)}
+  100%{transform:translate(calc(var(--dx) * -.6),115vh) rotate(380deg);opacity:0}}
+@keyframes burst{0%{transform:translate(0,0) scale(.2) rotate(0);opacity:0}15%{opacity:1}100%{transform:translate(var(--bx),var(--by)) scale(1) rotate(var(--r));opacity:0}}
 @media (prefers-reduced-motion: reduce){
   *,*::before,*::after{animation:none!important;transition:none!important}
   .reveal{opacity:1;transform:none;filter:none}
-  .wr .nm{clip-path:none}
+  .wr .nm,html[dir="rtl"] .wr .nm{clip-path:none}
   .title::before,.title::after{transform:none}
 }
 
-/* music button */
-#musicBtn{position:fixed;right:16px;bottom:16px;z-index:60;width:46px;height:46px;border-radius:50%;border:1px solid var(--gold-l);
-  background:rgba(255,252,246,.95);color:var(--gold-d);font-size:22px;cursor:pointer;place-items:center;animation:spin 6s linear infinite}
+/* floating buttons */
+#musicBtn,#langBtn{position:fixed;bottom:16px;z-index:60;width:46px;height:46px;border-radius:50%;border:1px solid var(--gold-l);
+  background:rgba(255,252,246,.95);color:var(--gold-d);cursor:pointer;place-items:center}
+#musicBtn{right:16px;font-size:22px;animation:spin 6s linear infinite}
 #musicBtn.off{animation:none;opacity:.7}
+#langBtn{left:16px;display:grid;font-family:'Amiri','Cormorant Garamond',serif;font-weight:700;font-size:18px}
 @keyframes spin{to{transform:rotate(360deg)}}
 </style>
 </head>
@@ -186,21 +237,31 @@ footer p{font-style:italic;font-weight:600;font-size:24px;line-height:1.4;color:
 
 <audio id="bgm" src="assets/music.mp3" loop preload="auto"></audio>
 <button id="musicBtn" aria-label="Toggle music" style="display:none">♫</button>
+<button id="langBtn" aria-label="Language">عربي</button>
 
-<!-- ============ COVER ============ -->
+<!-- ============ COVER: ENVELOPE ============ -->
 <div id="cover">
-  <div class="cv">
-    <div class="kicker">You are invited</div>
-    <div class="frame">
-      <img class="border" src="assets/frame.webp?v=2" alt="">
-      <div class="names">Abdulrahman<span class="amp">&amp;</span>Buthaina</div>
+  <div class="cv" id="cv">
+    <div class="kicker" data-t="kicker">You are invited</div>
+    <div class="env" id="env" role="button" tabindex="0" aria-label="Open the invitation">
+      <div class="env-back"></div>
+      <div class="letter">
+        <div class="lt-in">
+          <div class="lt-orn">❦</div>
+          <div class="lt-names" data-h="names"></div>
+          <div class="lt-date" id="ltDate"></div>
+        </div>
+      </div>
+      <svg class="pocket" viewBox="0 0 150 100" preserveAspectRatio="none" aria-hidden="true">
+        <polygon points="0,0 78,60 0,100" fill="#f1dfb9" stroke="#d8bd86" stroke-width=".5"/>
+        <polygon points="150,0 72,60 150,100" fill="#eedab1" stroke="#d8bd86" stroke-width=".5"/>
+        <polygon points="0,100 75,42 150,100" fill="#f8ecd0" stroke="#d8bd86" stroke-width=".5"/>
+      </svg>
+      <div class="flap"></div>
+      <div class="seal">♥</div>
     </div>
-    <div class="cdate">
-      <div class="cw" id="cvDow"></div>
-      <div class="cn"><i></i><span id="cvDay"></span><i></i></div>
-      <div class="cm" id="cvMon"></div>
-    </div>
-    <button class="btn open" id="openBtn">Open</button>
+    <div class="hint" data-t="hint">Tap the seal to open</div>
+    <button class="btn open" id="openBtn" data-t="open">Open</button>
   </div>
 </div>
 
@@ -209,46 +270,58 @@ footer p{font-style:italic;font-weight:600;font-size:24px;line-height:1.4;color:
 
   <section class="hero">
     <img class="floral" src="assets/magnolia-b.webp?v=2" alt="" style="top:-20px;right:-10px;width:170px;opacity:.38;transform:scaleX(-1)">
-    <div class="eyebrow reveal">Welcome to our engagement</div>
+    <div class="eyebrow reveal" data-t="eyebrow">Welcome to our engagement</div>
     <div class="frame reveal">
       <img class="border" src="assets/frame.webp?v=2" alt="">
-      <div class="names">Abdulrahman<span class="amp">&amp;</span>Buthaina</div>
+      <div class="names" data-h="names"></div>
     </div>
     <img class="floral" src="assets/sprig.webp?v=2" alt="" style="bottom:6px;left:-10px;width:165px">
+  </section>
+
+  <section class="verse">
+    <div class="orn-row reveal" data-a="zoom"><i></i>❦<i></i></div>
+    <p class="ayah reveal" data-a="blur" data-d=".1s" lang="ar" dir="rtl">وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً</p>
+    <p class="ayah-tr reveal" data-a="blur" data-d=".25s" data-t="verseTr">And of His signs is that He created for you mates from among yourselves that you may find tranquillity in them, and He placed between you affection and mercy.</p>
+    <p class="ayah-ref reveal" data-d=".35s" data-t="verseRef">Ar-Rum 30:21</p>
   </section>
 
   <section class="info">
     <img class="corner-img floral" src="assets/corner-tl.webp?v=2" alt="" style="top:0;left:0">
     <img class="corner-img floral" src="assets/corner-br.webp?v=2" alt="" style="bottom:0;right:0">
-    <div class="title reveal">Engagement Info</div>
+    <div class="title reveal" data-t="infoTitle">Engagement Info</div>
     <div class="orn-row reveal" data-a="zoom" data-d=".1s"><i></i>❦<i></i></div>
-    <p class="lead reveal" data-a="blur" data-d=".15s">With love, we invite you<br>to celebrate our engagement<br>with us</p>
+    <p class="lead reveal" data-a="blur" data-d=".15s" data-h="lead">With love, we invite you<br>to celebrate our engagement<br>with us</p>
     <div class="pair">
-      <div class="wr" style="--w:2.4s;--d:.3s"><span class="nm">Abdulrahman</span><i class="pen"></i></div>
+      <div class="wr" style="--w:2.4s;--d:.3s"><span class="nm" data-t="n1">Abdulrahman</span><i class="pen"></i></div>
       <span class="amp2 reveal" data-a="zoom" data-d="2.5s"><i></i><b>&amp;</b><i></i></span>
-      <div class="wr" style="--w:1.9s;--d:3s"><span class="nm">Buthaina</span><i class="pen"></i></div>
+      <div class="wr" style="--w:1.9s;--d:3s"><span class="nm" data-t="n2">Buthaina</span><i class="pen"></i></div>
     </div>
     <div class="divider reveal" data-a="zoom"><i></i>✦<i></i></div>
 
     <div class="event reveal" data-a="zoom">
-      <div class="eyebrow-s">Engagement Ceremony</div>
-      <div class="ename">Ce La Vie Nile Lotus</div>
-      <div class="at">AT</div>
-      <div class="time" id="t1"></div>
-      <div class="dl">
-        <div class="dw" id="dow"></div>
-        <div class="dn" id="dd"></div>
-        <div class="dm" id="mon"></div>
+      <img class="orn tl" src="assets/ornament.webp" alt="">
+      <img class="orn tr" src="assets/ornament.webp" alt="">
+      <img class="orn bl" src="assets/ornament.webp" alt="">
+      <img class="orn br" src="assets/ornament.webp" alt="">
+      <div class="side ev-k reveal" data-a="blur" data-d=".25s"><i></i><span data-t="evTitle">Engagement Ceremony</span><i></i></div>
+      <div class="ename gt reveal" data-a="zoom" data-d=".4s" data-t="venue">Ce La Vie Nile Lotus</div>
+      <div class="side at reveal" data-d=".55s"><i></i><span data-t="at">AT</span><i></i></div>
+      <div class="time gt reveal" data-a="zoom" data-d=".65s" id="t1"></div>
+      <div class="dl reveal" data-d=".85s">
+        <div class="side dw"><i></i><span id="dow"></span><i></i></div>
+        <div class="dn gt" id="dd"></div>
+        <div class="side dm"><i></i><span id="mon"></span><i></i></div>
         <div class="dy" id="yy"></div>
       </div>
+      <div class="ev-heart reveal" data-a="zoom" data-d="1.1s">♥</div>
     </div>
   </section>
 
   <section>
-    <div class="title reveal">Countdown</div>
+    <div class="title reveal" data-t="count">Countdown</div>
     <div class="count reveal">
-      <div><b id="cd">0</b><span>Days</span></div><div><b id="ch">0</b><span>Hours</span></div>
-      <div><b id="cm">0</b><span>Min</span></div><div><b id="cs">0</b><span>Sec</span></div>
+      <div><b id="cd">0</b><span data-t="days">Days</span></div><div><b id="ch">0</b><span data-t="hours">Hours</span></div>
+      <div><b id="cm">0</b><span data-t="min">Min</span></div><div><b id="cs">0</b><span data-t="sec">Sec</span></div>
     </div>
     <div class="cal reveal"><h4 id="calTitle"></h4><div class="grid" id="calGrid"></div></div>
     <img class="flourish" src="assets/flourish.webp?v=2" alt="">
@@ -256,54 +329,127 @@ footer p{font-style:italic;font-weight:600;font-size:24px;line-height:1.4;color:
 
   <section class="venue">
     <img class="floral" src="assets/magnolia-a.webp?v=2" alt="" style="top:0;left:0;width:130px;opacity:.38;-webkit-mask-image:linear-gradient(to bottom,#000 55%,transparent);mask-image:linear-gradient(to bottom,#000 55%,transparent)">
-    <div class="title reveal">Engagement Venue</div>
+    <div class="title reveal" data-t="venueTitle">Engagement Venue</div>
     <div class="venue-name reveal">Ce La Vie Nile Lotus</div>
     <div class="map reveal">
       <iframe title="Map of Ce La Vie Nile Lotus" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen
         src="https://maps.google.com/maps?q=29.9491488,31.2637794&amp;hl=en&amp;z=16&amp;output=embed"></iframe>
     </div>
-    <a class="btn reveal" target="_blank" rel="noopener"
+    <a class="btn reveal" target="_blank" rel="noopener" data-t="directions"
        href="https://www.google.com/maps/place/%D9%85%D8%B1%D8%B3%D9%89+%D8%A7%D9%84%D9%86%D9%87%D8%B1+%D8%A7%D9%84%D8%AE%D8%A7%D9%84%D8%AF%E2%80%AD/@29.9491488,31.2637794,17z/data=!3m1!4b1!4m6!3m5!1s0x1458395708273805:0x78ba78abc15cd1f!8m2!3d29.9491488!4d31.2637794!16s%2Fg%2F11jjmrkfts?entry=ttu&amp;g_ep=EgoyMDI2MTExMC4wIKXMDSoASAFQAw%3D%3D">Get directions</a>
   </section>
 
   <footer>
-    <div class="orn">❦</div>
-    <p>Your presence would be the greatest gift we could receive!</p>
+    <div class="orn-f">❦</div>
+    <p data-t="footer">Your presence would be the greatest gift we could receive!</p>
     <div class="hr"></div>
-    <p style="font-size:24px;font-style:normal;font-weight:700">Abdulrahman <span class="heart">♡</span> Buthaina</p>
+    <p style="font-size:24px;font-style:normal;font-weight:700"><span data-t="n1">Abdulrahman</span> <span class="heart">♡</span> <span data-t="n2">Buthaina</span></p>
   </footer>
 </main>
 
 <script>
 /* ======= EDIT HERE ======= */
 const EVENT = new Date(2026, 11, 4, 15, 0);   // year, month(0-11), day, hour, minute — 4 December 2026, 3:00 PM
-const TIME1 = "03:00 PM";
-const VENUE = "Ce La Vie Nile Lotus";
 /* ========================= */
 
 const $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)];
-const MONTHS = ["January","February","March","April","May","June","July","August","September","October","November","December"];
-const DOW = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
 const pad = n => String(n).padStart(2,"0");
+const still = matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-$("#cvDow").textContent = DOW[EVENT.getDay()].toUpperCase();
-$("#cvDay").textContent = EVENT.getDate();
-$("#cvMon").textContent = MONTHS[EVENT.getMonth()].toUpperCase() + " · " + EVENT.getFullYear();
-$("#t1").textContent = TIME1;
-$("#dow").textContent = DOW[EVENT.getDay()].toUpperCase();
-$("#dd").textContent = pad(EVENT.getDate());
-$("#mon").textContent = MONTHS[EVENT.getMonth()].toUpperCase();
-$("#yy").textContent = EVENT.getFullYear();
+/* ---------- English / Arabic ---------- */
+const I18N = {
+  en: {
+    title:"Abdulrahman & Buthaina — Engagement", langBtn:"عربي",
+    kicker:"You are invited", hint:"Tap the seal to open", open:"Open",
+    eyebrow:"Welcome to our engagement",
+    verseTr:"And of His signs is that He created for you mates from among yourselves that you may find tranquillity in them, and He placed between you affection and mercy.",
+    verseRef:"Ar-Rum 30:21",
+    infoTitle:"Engagement Info", lead:"With love, we invite you<br>to celebrate our engagement<br>with us",
+    n1:"Abdulrahman", n2:"Buthaina",
+    evTitle:"Engagement Ceremony", venue:"Ce La Vie Nile Lotus", at:"AT", time:"03:00 PM",
+    count:"Countdown", days:"Days", hours:"Hours", min:"Min", sec:"Sec",
+    venueTitle:"Engagement Venue", directions:"Get directions",
+    footer:"Your presence would be the greatest gift we could receive!",
+    months:["January","February","March","April","May","June","July","August","September","October","November","December"],
+    dows:["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+    calH:["Mo","Tu","We","Th","Fr","Sa","Su"]
+  },
+  ar: {
+    title:"عبد الرحمن وبثينة — دعوة خطوبة", langBtn:"EN",
+    kicker:"أنتم مدعوون", hint:"اضغط على الختم لفتح الدعوة", open:"افتح",
+    eyebrow:"أهلاً بكم في حفل خطوبتنا",
+    verseTr:"", verseRef:"سورة الروم: ٢١",
+    infoTitle:"تفاصيل الخطوبة", lead:"بكل حبٍّ، ندعوكم<br>لمشاركتنا فرحة خطوبتنا",
+    n1:"عبد الرحمن", n2:"بثينة",
+    evTitle:"حفل الخطوبة", venue:"Ce La Vie Nile Lotus", at:"الساعة", time:"03:00 م",
+    count:"العدّ التنازلي", days:"يوم", hours:"ساعة", min:"دقيقة", sec:"ثانية",
+    venueTitle:"مكان الحفل", directions:"الاتجاهات إلى المكان",
+    footer:"حضوركم هو أجمل هدية لنا!",
+    months:["يناير","فبراير","مارس","أبريل","مايو","يونيو","يوليو","أغسطس","سبتمبر","أكتوبر","نوفمبر","ديسمبر"],
+    dows:["الأحد","الإثنين","الثلاثاء","الأربعاء","الخميس","الجمعة","السبت"],
+    calH:["ن","ث","ر","خ","ج","س","ح"]
+  }
+};
+let LANG = "en";
+const t = k => I18N[LANG][k];
 
-/* background music — song at assets/music.mp3 */
+function renderDates(){
+  const dow = t("dows")[EVENT.getDay()], mon = t("months")[EVENT.getMonth()], d = EVENT.getDate(), y = EVENT.getFullYear();
+  const up = s => LANG === "en" ? s.toUpperCase() : s;
+  $("#ltDate").textContent = dow + (LANG === "ar" ? "، " : ", ") + d + " " + mon + " " + y;
+  $("#t1").textContent = t("time");
+  $("#dow").textContent = up(dow);
+  $("#dd").textContent = pad(d);
+  $("#mon").textContent = up(mon);
+  $("#yy").textContent = y;
+}
+function buildCal(){
+  const y = EVENT.getFullYear(), m = EVENT.getMonth();
+  $("#calTitle").textContent = t("months")[m] + " " + y;
+  let html = t("calH").map(d => `<span class="h">${d}</span>`).join("");
+  const first = (new Date(y,m,1).getDay()+6)%7, days = new Date(y,m+1,0).getDate();
+  html += "<span></span>".repeat(first);
+  for(let d = 1; d <= days; d++) html += `<span class="${d===EVENT.getDate()?'hit':''}">${d}</span>`;
+  $("#calGrid").innerHTML = html;
+}
+function setLang(l){
+  LANG = l;
+  const root = document.documentElement; root.lang = l; root.dir = l === "ar" ? "rtl" : "ltr";
+  $$("[data-t]").forEach(e => { e.textContent = t(e.dataset.t); });
+  $$("[data-h]").forEach(e => { e.innerHTML = e.dataset.h === "names" ? `${t("n1")}<span class="amp">&amp;</span>${t("n2")}` : t(e.dataset.h); });
+  document.title = t("title");
+  $("#langBtn").textContent = t("langBtn");
+  renderDates(); buildCal();
+  try{ localStorage.setItem("lang", l); }catch(e){}
+}
+$("#langBtn").onclick = () => setLang(LANG === "en" ? "ar" : "en");
+(function(){
+  let l = new URLSearchParams(location.search).get("lang");
+  if(l !== "ar" && l !== "en"){ try{ l = localStorage.getItem("lang"); }catch(e){} }
+  setLang(l === "ar" ? "ar" : "en");
+})();
+
+/* ---------- music ---------- */
 const bgm = $("#bgm"), mbtn = $("#musicBtn");
 function setMusicUI(){ mbtn.classList.toggle("off", bgm.paused); mbtn.textContent = bgm.paused ? "♪" : "♫"; }
 bgm.addEventListener("error", () => { mbtn.style.display = "none"; });
 bgm.addEventListener("play", setMusicUI); bgm.addEventListener("pause", setMusicUI);
-$("#openBtn").addEventListener("click", () => { bgm.volume = .6; bgm.play().then(() => { mbtn.style.display = "grid"; setMusicUI(); }).catch(() => {}); });
 mbtn.onclick = () => bgm.paused ? bgm.play() : bgm.pause();
 
-$("#openBtn").addEventListener("click", () => { $("#cover").classList.add("gone"); document.body.classList.remove("locked"); window.scrollTo(0,0); observe(); });
+/* ---------- envelope opening ---------- */
+let opened = false;
+function openInvite(){
+  if(opened) return; opened = true;
+  bgm.volume = .6; bgm.play().then(() => { mbtn.style.display = "grid"; setMusicUI(); }).catch(() => {});
+  $("#env").classList.add("open"); $("#cv").classList.add("opened");
+  setTimeout(burst, still ? 0 : 450);
+  setTimeout(() => {
+    $("#cover").classList.add("gone"); document.body.classList.remove("locked"); window.scrollTo(0,0); observe();
+  }, still ? 0 : 3100);
+}
+$("#openBtn").addEventListener("click", openInvite);
+$("#env").addEventListener("click", openInvite);
+$("#env").addEventListener("keydown", e => { if(e.key === "Enter" || e.key === " "){ e.preventDefault(); openInvite(); } });
 
 /* scroll reveal */
 function observe(){
@@ -324,28 +470,34 @@ function tick(){
 }
 tick(); setInterval(tick, 1000);
 
-/* calendar */
-(function(){
-  const y = EVENT.getFullYear(), m = EVENT.getMonth();
-  $("#calTitle").textContent = MONTHS[m] + " " + y;
-  let html = ["Mo","Tu","We","Th","Fr","Sa","Su"].map(d=>`<span class="h">${d}</span>`).join("");
-  const first = (new Date(y,m,1).getDay()+6)%7, days = new Date(y,m+1,0).getDate();
-  html += "<span></span>".repeat(first);
-  for(let d=1; d<=days; d++) html += `<span class="${d===EVENT.getDate()?'hit':''}">${d}</span>`;
-  $("#calGrid").innerHTML = html;
-})();
-
-/* ---------- animations ---------- */
-const still = matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-/* floating gold sparkles */
+/* ---------- love & joy: rising hearts + drifting petals ---------- */
+const HEART_COLORS = ["#d9a066","#e3b08a","#e8b7a6","#cf9a7b","#e6c07a"];
+const PETAL_COLORS = ["#fff4e4","#f6dfc4","#f3d2c0","#fbe9d6"];
+const rnd = (a, b) => a + Math.random() * (b - a);
+const pick = a => a[Math.floor(Math.random() * a.length)];
 if(!still){
-  const box = document.createElement("div"); box.id = "sparkles"; document.body.appendChild(box);
-  for(let i = 0; i < 18; i++){
-    const s = document.createElement("span"); s.className = "sp";
-    const size = 4 + Math.random() * 7;
-    s.style.cssText = `--x:${Math.random()*100}vw;--s:${size}px;--t:${11+Math.random()*12}s;--dl:${-Math.random()*20}s;--dx:${(Math.random()*120-60)}px`;
-    box.appendChild(s);
+  const box = document.createElement("div"); box.id = "fx"; document.body.appendChild(box);
+  for(let i = 0; i < 11; i++){
+    const h = document.createElement("span"); h.className = "fx heart"; h.textContent = "♥";
+    h.style.cssText = `--x:${rnd(2,96)}vw;--s:${rnd(12,26)}px;--c:${pick(HEART_COLORS)};--t:${rnd(13,22)}s;--dl:${-rnd(0,22)}s;--dx:${rnd(-45,45)}px`;
+    box.appendChild(h);
+  }
+  for(let i = 0; i < 9; i++){
+    const p = document.createElement("span"); p.className = "fx petal";
+    p.style.cssText = `--x:${rnd(2,96)}vw;--s:${rnd(9,15)}px;--c:${pick(PETAL_COLORS)};--t:${rnd(14,24)}s;--dl:${-rnd(0,24)}s;--dx:${rnd(-80,80)}px`;
+    box.appendChild(p);
+  }
+}
+function burst(){
+  if(still) return;
+  for(let i = 0; i < 34; i++){
+    const b = document.createElement("span"); const heart = i % 3 !== 0;
+    b.className = "fx burst " + (heart ? "heart" : "petal");
+    if(heart) b.textContent = "♥";
+    const ang = rnd(0, Math.PI * 2), dist = rnd(110, 330);
+    b.style.cssText = `--s:${heart ? rnd(14,28) : rnd(9,15)}px;--c:${heart ? pick(HEART_COLORS) : pick(PETAL_COLORS)};--bx:${Math.cos(ang)*dist}px;--by:${Math.sin(ang)*dist - 80}px;--r:${rnd(-200,200)}deg;animation-delay:${rnd(0,.25)}s`;
+    document.body.appendChild(b);
+    setTimeout(() => b.remove(), 2400);
   }
 }
 
