@@ -60,16 +60,24 @@ html[lang="ar"] .cal .grid{font-size:16px}
 #cover.gone{opacity:0;visibility:hidden}
 .cv{width:min(480px,100%);padding:18px 16px;text-align:center}
 .kicker{font-weight:700;font-size:clamp(18px,5vw,22px);letter-spacing:.26em;text-transform:uppercase;color:var(--gold);transition:opacity .6s}
-.stage{position:relative;width:min(470px,94vw);aspect-ratio:1300/867;margin:clamp(36px,7vh,70px) auto 0;cursor:pointer;-webkit-tap-highlight-color:transparent}
-.env{position:absolute;inset:0;transition:opacity .9s ease 1.5s,transform 1.5s ease 1.5s}
-.env img{position:absolute;inset:0;width:100%;height:100%;display:block;transition:opacity .7s ease}
-.e-open{opacity:0;transform:scale(1.077)}
-.stage.open .e-closed{opacity:0}
+.stage{position:relative;width:min(360px,86vw,calc(100vh - 300px));aspect-ratio:1/1;margin:clamp(24px,5vh,50px) auto 0;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.vclip{position:absolute;inset:0;overflow:hidden}
+.env-video{position:absolute;width:185.2%;max-width:none;left:-50%;top:-5.2%;height:auto;display:block;mix-blend-mode:multiply;pointer-events:none}
+.stage.novideo .vclip{display:none}
+.stage:not(.novideo) .env{display:none}
+.env{position:absolute;inset:0;perspective:1400px;transition:opacity .9s ease 2.3s,transform 1.5s ease 2.3s}
+.env img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;display:block}
+.e-open{opacity:0;transform:translateY(-3%) scale(1.12);transition:opacity .45s ease .6s}
+.e-closed{clip-path:polygon(evenodd,0% 0%,100% 0%,100% 100%,0% 100%,0% 0%,4.69% 10.74%,95.37% 10.74%,95.37% 20.02%,57.62% 60.55%,57.94% 64.45%,55.99% 70.31%,52.08% 73.44%,50.13% 74.02%,48.18% 73.44%,44.27% 70.31%,42.32% 64.45%,42.64% 60.55%,7.29% 23.44%,4.69% 14.65%,4.69% 10.74%,0% 0%);transition:opacity .4s ease .6s}
+.e-flap{clip-path:polygon(4.69% 10.74%,95.37% 10.74%,95.37% 20.02%,57.62% 60.55%,57.94% 64.45%,55.99% 70.31%,52.08% 73.44%,50.13% 74.02%,48.18% 73.44%,44.27% 70.31%,42.32% 64.45%,42.64% 60.55%,7.29% 23.44%,4.69% 14.65%);transform-origin:50% 10.74%;backface-visibility:hidden;
+  transition:transform .95s cubic-bezier(.45,0,.35,1),opacity .15s ease .8s}
 .stage.open .e-open{opacity:1}
+.stage.open .e-closed{opacity:0}
+.stage.open .e-flap{transform:rotateX(-105deg);opacity:0}
 .stage.open .env{opacity:0;transform:translateY(12%) scale(.92)}
-.card{position:absolute;left:50%;top:50%;width:min(370px,84vw);z-index:5;container-type:inline-size;opacity:0;
-  transform:translate(-50%,-34%) scale(.4);transition:opacity .5s ease .9s,transform 1.6s cubic-bezier(.2,.8,.2,1) .9s}
-.stage.open .card{opacity:1;transform:translate(-50%,-50%) scale(1)}
+.card{position:absolute;left:50%;top:50%;width:min(380px,88vw);z-index:5;container-type:inline-size;opacity:0;
+  transform:translate(-50%,-62%) scale(.34);transition:opacity .35s ease,transform 1.7s cubic-bezier(.25,.8,.25,1)}
+.stage.cardin .card{opacity:1;transform:translate(-50%,-50%) scale(1)}
 .card>img{display:block;width:100%;height:auto}
 .card-text{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:12% 10%}
 .ct-k{font-weight:700;font-size:4.4cqw;letter-spacing:.24em;text-transform:uppercase;color:var(--olive)}
@@ -245,9 +253,11 @@ html[dir="rtl"] .wr.in .pen{animation:penR var(--w) linear var(--d) forwards}
   <div class="cv" id="cv">
     <div class="kicker" data-t="kicker">You are invited</div>
     <div class="stage" id="stage" role="button" tabindex="0" aria-label="Open the invitation">
+      <div class="vclip"><video id="envVideo" class="env-video" src="assets/envelope.mp4#t=0.001" muted playsinline preload="auto"></video></div>
       <div class="env">
-        <img class="e-closed" src="assets/env-closed.webp?v=1" alt="">
-        <img class="e-open" src="assets/env-open.webp?v=1" alt="">
+        <img class="e-open" src="assets/env-open.webp?v=2" alt="">
+        <img class="e-closed" src="assets/env-closed.webp?v=2" alt="">
+        <img class="e-flap" src="assets/env-closed.webp?v=2" alt="">
       </div>
       <div class="card">
         <img src="assets/card.webp?v=1" alt="">
@@ -438,14 +448,34 @@ mbtn.onclick = () => bgm.paused ? bgm.play() : bgm.pause();
 
 /* ---------- envelope opening ---------- */
 let opened = false;
+const vid = $("#envVideo");
+vid.addEventListener("error", () => $("#stage").classList.add("novideo"));
 function openInvite(){
   if(opened) return; opened = true;
   bgm.volume = .6; bgm.play().then(() => { mbtn.style.display = "grid"; setMusicUI(); }).catch(() => {});
-  $("#stage").classList.add("open"); $("#cv").classList.add("opened");
-  setTimeout(burst, still ? 0 : 450);
-  setTimeout(() => {
+  const stage = $("#stage"); $("#cv").classList.add("opened");
+  const useVideo = !still && !stage.classList.contains("novideo");
+  const finish = ms => setTimeout(() => {
     $("#cover").classList.add("gone"); document.body.classList.remove("locked"); window.scrollTo(0,0); observe();
-  }, still ? 0 : 4300);
+  }, ms);
+  if(useVideo){
+    vid.currentTime = 0; vid.playbackRate = 1.4;
+    vid.play().catch(() => { stage.classList.add("novideo"); stage.classList.add("open"); });
+    setTimeout(burst, 1400);
+    /* stop the video when the flap is fully open (before its blank card shows) and let OUR card rise out */
+    let released = false;
+    const release = () => {
+      if(released) return; released = true;
+      vid.pause(); stage.classList.add("cardin"); finish(2900);
+    };
+    vid.addEventListener("timeupdate", () => { if(vid.currentTime >= 4.1) release(); });
+    setTimeout(release, 4200);   /* safety net if timeupdate never fires */
+  } else {
+    stage.classList.add("open");
+    setTimeout(burst, still ? 0 : 450);
+    setTimeout(() => stage.classList.add("cardin"), still ? 0 : 1500);
+    finish(still ? 0 : 4700);
+  }
 }
 $("#openBtn").addEventListener("click", openInvite);
 $("#stage").addEventListener("click", openInvite);

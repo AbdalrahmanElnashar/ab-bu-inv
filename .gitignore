@@ -1,1 +1,5 @@
 .claude/
+assets/ornate_*
+assets/gemini_generated*
+video-inputs/
+probe.html
