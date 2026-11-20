@@ -20,7 +20,7 @@ body.locked{overflow:hidden}
 
 /* ---------- shared ---------- */
 .frame{position:relative;container-type:inline-size;margin:0 auto}
-.frame img.border{display:block;width:100%;height:auto;mix-blend-mode:multiply}
+.frame img.border{display:block;width:100%;height:auto}
 .names{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;
   font-family:var(--serif);font-style:italic;font-weight:600;font-size:10.4cqw;line-height:1.08;color:var(--gold)}
 .names .amp{font-family:var(--script);font-style:normal;font-weight:400;font-size:.8em;line-height:1;margin:.12em 0;color:var(--gold-d)}
@@ -57,7 +57,7 @@ section{position:relative;padding:54px 28px;text-align:center}
 .title::before,.title::after{content:"";flex:0 0 clamp(14px,6vw,38px);height:1px;background:var(--gold);transform:scaleX(0);transition:transform 1.2s .35s ease}
 .title::before{transform-origin:right}.title::after{transform-origin:left}
 .title.in::before,.title.in::after{transform:scaleX(1)}
-.floral{position:absolute;pointer-events:none;height:auto;mix-blend-mode:multiply}
+.floral{position:absolute;pointer-events:none;height:auto}
 
 /* hero */
 .hero{padding-top:42px}
@@ -68,7 +68,7 @@ section{position:relative;padding:54px 28px;text-align:center}
 .lead{font-style:italic;font-weight:600;font-size:27px;line-height:1.4;color:var(--gold)}
 .info{overflow:hidden;background:radial-gradient(ellipse 70% 40% at 50% 38%,rgba(230,201,140,.22),transparent 70%)}
 .info{padding-bottom:130px}
-.info .corner-img{position:absolute;pointer-events:none;mix-blend-mode:multiply;width:118px;height:auto}
+.info .corner-img{position:absolute;pointer-events:none;width:118px;height:auto}
 .info .title{font-size:clamp(17px,5vw,22px);gap:10px}
 .orn-row{display:flex;align-items:center;justify-content:center;gap:14px;color:var(--gold);font-size:26px;margin:-6px 0 10px}
 .orn-row i{flex:0 0 60px;height:1px;background:linear-gradient(90deg,transparent,var(--gold))}
@@ -112,7 +112,7 @@ section{position:relative;padding:54px 28px;text-align:center}
 .count b{display:block;font-weight:600;font-size:32px;line-height:1.1;color:var(--gold-d)}
 .count span{font-weight:700;font-size:12px;letter-spacing:.16em;text-transform:uppercase}
 .cal{position:relative;width:min(100%,460px);aspect-ratio:1448/1086;padding:9% 17%;margin:0 auto;display:flex;flex-direction:column;justify-content:center}
-.cal::before{content:"";position:absolute;inset:0;background:url(assets/cal-frame.webp) center/100% 100% no-repeat;mix-blend-mode:multiply;pointer-events:none}
+.cal::before{content:"";position:absolute;inset:0;background:url(assets/cal-frame.webp?v=2) center/100% 100% no-repeat;pointer-events:none}
 .cal>*{position:relative}
 .cal h4{font-weight:700;font-size:19px;letter-spacing:.04em;color:var(--olive);margin-bottom:4px}
 .cal .grid{display:grid;grid-template-columns:repeat(7,1fr);gap:2px 0;font-size:15px;font-weight:600;color:var(--olive)}
@@ -121,7 +121,7 @@ section{position:relative;padding:54px 28px;text-align:center}
 .cal .grid .hit{color:#fff;position:relative;isolation:isolate}
 .cal .grid .hit::before{content:"♥";position:absolute;left:50%;top:50%;transform:translate(-50%,-52%);font-size:38px;line-height:1;color:#bf9156;z-index:-1}
 .lnk{background:none;border:0;border-bottom:1px solid var(--olive);color:var(--olive);font-family:var(--serif);font-weight:700;font-size:17px;cursor:pointer;margin-top:14px;padding:0 2px}
-.flourish{display:block;width:280px;height:auto;margin:34px auto 0;mix-blend-mode:multiply}
+.flourish{display:block;width:280px;height:auto;margin:34px auto 0}
 
 /* venue */
 .venue-name{font-weight:700;font-size:32px;line-height:1.15;color:var(--olive);margin:2px 0 18px}
@@ -192,7 +192,7 @@ footer p{font-style:italic;font-weight:600;font-size:24px;line-height:1.4;color:
   <div class="cv">
     <div class="kicker">You are invited</div>
     <div class="frame">
-      <img class="border" src="assets/frame.webp" alt="">
+      <img class="border" src="assets/frame.webp?v=2" alt="">
       <div class="names">Abdulrahman<span class="amp">&amp;</span>Buthaina</div>
     </div>
     <div class="cdate">
@@ -208,18 +208,18 @@ footer p{font-style:italic;font-weight:600;font-size:24px;line-height:1.4;color:
 <main id="page">
 
   <section class="hero">
-    <img class="floral" src="assets/magnolia-b.webp" alt="" style="top:-20px;right:-10px;width:170px;opacity:.38;transform:scaleX(-1)">
+    <img class="floral" src="assets/magnolia-b.webp?v=2" alt="" style="top:-20px;right:-10px;width:170px;opacity:.38;transform:scaleX(-1)">
     <div class="eyebrow reveal">Welcome to our engagement</div>
     <div class="frame reveal">
-      <img class="border" src="assets/frame.webp" alt="">
+      <img class="border" src="assets/frame.webp?v=2" alt="">
       <div class="names">Abdulrahman<span class="amp">&amp;</span>Buthaina</div>
     </div>
-    <img class="floral" src="assets/sprig.webp" alt="" style="bottom:6px;left:-10px;width:165px">
+    <img class="floral" src="assets/sprig.webp?v=2" alt="" style="bottom:6px;left:-10px;width:165px">
   </section>
 
   <section class="info">
-    <img class="corner-img floral" src="assets/corner-tl.webp" alt="" style="top:0;left:0">
-    <img class="corner-img floral" src="assets/corner-br.webp" alt="" style="bottom:0;right:0">
+    <img class="corner-img floral" src="assets/corner-tl.webp?v=2" alt="" style="top:0;left:0">
+    <img class="corner-img floral" src="assets/corner-br.webp?v=2" alt="" style="bottom:0;right:0">
     <div class="title reveal">Engagement Info</div>
     <div class="orn-row reveal" data-a="zoom" data-d=".1s"><i></i>❦<i></i></div>
     <p class="lead reveal" data-a="blur" data-d=".15s">With love, we invite you<br>to celebrate our engagement<br>with us</p>
@@ -251,11 +251,11 @@ footer p{font-style:italic;font-weight:600;font-size:24px;line-height:1.4;color:
       <div><b id="cm">0</b><span>Min</span></div><div><b id="cs">0</b><span>Sec</span></div>
     </div>
     <div class="cal reveal"><h4 id="calTitle"></h4><div class="grid" id="calGrid"></div></div>
-    <img class="flourish" src="assets/flourish.webp" alt="">
+    <img class="flourish" src="assets/flourish.webp?v=2" alt="">
   </section>
 
   <section class="venue">
-    <img class="floral" src="assets/magnolia-a.webp" alt="" style="top:0;left:0;width:130px;opacity:.38;-webkit-mask-image:linear-gradient(to bottom,#000 55%,transparent);mask-image:linear-gradient(to bottom,#000 55%,transparent)">
+    <img class="floral" src="assets/magnolia-a.webp?v=2" alt="" style="top:0;left:0;width:130px;opacity:.38;-webkit-mask-image:linear-gradient(to bottom,#000 55%,transparent);mask-image:linear-gradient(to bottom,#000 55%,transparent)">
     <div class="title reveal">Engagement Venue</div>
     <div class="venue-name reveal">Ce La Vie Nile Lotus</div>
     <div class="map reveal">
