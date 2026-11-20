@@ -21,7 +21,7 @@
 <link rel="preload" as="image" href="assets/env-closed.webp?v=5">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Amiri+Quran&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,500;1,600;1,700&family=Great+Vibes&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Scheherazade+New:wght@500;700&family=Amiri+Quran&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,500;1,600;1,700&family=Great+Vibes&display=swap" rel="stylesheet">
 <style>
 :root{
   --gold:#b5834a; --gold-d:#9f7036; --gold-l:#e6d0a6; --olive:#8f9163; --cream:#fffcf6;
@@ -36,8 +36,8 @@ body.locked{overflow:hidden}
 /* ---------- Arabic mode ---------- */
 html[lang="ar"]{--serif:'Amiri','Cormorant Garamond',serif}
 html[lang="ar"] *{letter-spacing:0!important;text-indent:0!important;font-style:normal!important;text-transform:none!important}
-html[lang="ar"] .names{font-size:12.4cqw;line-height:1.3}
-html[lang="ar"] .nm{font-size:58px;line-height:1.45}
+html[lang="ar"] .names{font-size:12.6cqw;line-height:1.7}
+html[lang="ar"] .nm{font-size:56px;line-height:1.9;padding-top:.15em}
 html[lang="ar"] .lead{line-height:1.8;font-size:28px}
 html[lang="ar"] .ayah-tr{display:none}
 html[lang="ar"] .cal .grid{font-size:16px}
@@ -82,7 +82,11 @@ html[lang="ar"] .cal .grid{font-size:16px}
 .ct-sub{margin-top:4cqw;font-style:italic;font-weight:600;font-size:5.4cqw;color:var(--olive)}
 .ct-line{width:22cqw;height:1px;background:var(--gold);margin:5cqw 0 4cqw}
 .ct-date{font-weight:700;font-size:5cqw;letter-spacing:.1em;color:var(--gold-d)}
-html[lang="ar"] .ct-names{font-size:13cqw;line-height:1.3}
+html[lang="ar"] .ct-names{font-size:13cqw;line-height:1.75}
+html[lang="ar"] .ct-names .amp{line-height:1.2}
+/* names in Arabic: a font whose vowel marks and dots sit close to the letters */
+html[lang="ar"]{--arname:'Scheherazade New','Amiri',serif}   /* font of the Arabic names */
+html[lang="ar"] .names,html[lang="ar"] .ct-names,html[lang="ar"] .nm,html[lang="ar"] [data-t="n1"],html[lang="ar"] [data-t="n2"]{font-family:var(--arname);font-weight:700}
 html[lang="ar"] .ct-sub{font-size:6cqw}
 .hint{margin-top:18px;font-style:italic;font-weight:600;font-size:19px;color:var(--olive);transition:opacity .5s}
 .btn.open{margin-top:12px;font-size:21px;padding:12px 54px;transition:opacity .5s,background .2s}
@@ -395,7 +399,7 @@ const I18N = {
     eyebrow:"أهلاً بكم في حفل خطوبتنا",
     verseTr:"", verseRef:"سورة الروم: ٢١",
     infoTitle:"تفاصيل الخطوبة", lead:"بكل حبٍّ، ندعوكم<br>لمشاركتنا فرحة خطوبتنا",
-    n1:"عبد الرحمن", n2:"بثينة",
+    n1:"عَبْدُالرَّحْمَنِ", n2:"بُثَيْنَة",
     evTitle:"حفل الخطوبة", venue:"Ce La Vie Nile Lotus", at:"الساعة", time:"03:00 م",
     count:"العدّ التنازلي", days:"يوم", hours:"ساعة", min:"دقيقة", sec:"ثانية",
     venueTitle:"مكان الحفل", directions:"الاتجاهات إلى المكان",
